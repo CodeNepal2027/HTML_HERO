@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML List Practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1e293b;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        /* Container for horizontal/vertical grid layout */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        /* Base Button Styles */
+        .btn {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px 24px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15);
+            filter: brightness(1.08);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Individual Button Colors */
+        .btn-description {
+            background-color: #3b82f6; /* Blue */
+        }
+
+        .btn-unordered {
+            background-color: #10b981; /* Emerald Green */
+        }
+
+        .btn-ordered {
+            background-color: #f59e0b; /* Amber/Orange */
+        }
+
+        .btn-nested {
+            background-color: #8b5cf6; /* Purple */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML List Practice Modules</h1>
+
+    <div class="button-container">
+        <!-- Description Section -->
+        <a href="./components/description_list.html" class="btn btn-description">Description List</a>
+
+        <!-- Unordered Section -->
+        <a href="./components/unordered_list.html" class="btn btn-unordered">Unordered List</a>
+
+        <!-- Ordered Section -->
+        <a href="./components/ordered_list.html" class="btn btn-ordered">Ordered List</a>
+
+        <!-- Nested Section -->
+        <a href="./components/nested_list.html" class="btn btn-nested">Nested List</a>
+    </div>
+
+</body>
+</html>
