@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio in HTML</title>
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <iframe src="./components/Hero.html" title="Hero section" frameborder="0" width="100%" scrolling="no" onload="adjustFrame(this)"></iframe>
+    <hr>
+
+    <!-- About Section -->
+    <iframe src="./components/About.html" title="About section" frameborder="0" width="100%" scrolling="no" onload="adjustFrame(this)"></iframe>
+    <hr>
+
+    <!-- Schedule Section -->
+    <iframe src="./components/Schedule.html" title="Schedule section" frameborder="0" width="100%" scrolling="no" onload="adjustFrame(this)"></iframe>
+    <hr>
+
+    <!-- Skill Section -->
+    <iframe src="./components/Skill.html" title="Skill section" frameborder="0" width="100%" scrolling="no" onload="adjustFrame(this)"></iframe>
+    <hr>
+
+    <!-- Contact Section -->
+    <iframe src="./components/Contact.html" title="Contact section" frameborder="0" width="100%" scrolling="no" onload="adjustFrame(this)"></iframe>
+    <hr>
+    
+    <!-- Google Map Section -->
+    <iframe src="./components/google_map.html" title="Google Map section" frameborder="0" width="100%" scrolling="no" onload="adjustFrame(this)"></iframe>
+    <hr>
+
+    <script>
+        // 1. This prints IMMEDIATELY when the page opens in the console:
+        console.log(`
+            \x3C!-- iframe CODE USAGE EXAMPLE -->
+            
+            \x3Cbody>
+                \x3C!-- Contact Section -->
+                \x3Ciframe 
+                    src="./components/Contact.html" 
+                    title="Contact section" 
+                    frameborder="0" 
+                    width="100%" 
+                    scrolling="no" 
+                    onload="adjustFrame(this)"
+                >
+                \x3C/iframe>
+                \x3Chr>
+
+                \x3Cscript>
+                    function adjustFrame(iframe) {
+                        iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
+                    }
+                \x3C/script>
+            \x3C/body>
+        `);
+
+        // 2. Resizing logic (wrapped safely so CORS errors won't stop execution)
+        function adjustFrame(iframe) {
+            try {
+                iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
+            } catch (e) {
+                console.warn("Auto-height blocked by CORS policy. Please run using VS Code Live Server.");
+            }
+        }
+    </script>
+
+</body>
+</html>
