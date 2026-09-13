@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column Span</title>
+</head>
+<body>
+
+    <h2>Monthly Expense Report (colspan Practice)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Item Category</th>
+            <th>Item Name</th>
+            <th>Cost ($)</th>
+        </tr>
+        <tr>
+            <td>Stationery</td>
+            <td>Notebooks & Pens</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Books</td>
+            <td>Science Textbook</td>
+            <td>45</td>
+        </tr>
+        <!-- colspan="2" merges two column cells into one -->
+        <tr>
+            <td colspan="2">Total Expense</td>
+            <td>70</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("↔️ Column Span (colspan) Example");
+        console.log(`
+            \x3Ctr>
+                \x3C!-- Merges 2 columns together -->
+                \x3Ctd colspan="2">Total Expense\x3C/td>
+                \x3Ctd>70\x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

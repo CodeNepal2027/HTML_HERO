@@ -1,4 +1,30 @@
-/* Modern CSS Reset */
+/* ==========================================================================
+   Modern CSS Reset & Theme Variables
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+    --border-hover: #2563eb;
+    
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    
+    --accent-blue: #2563eb;
+    --accent-blue-bg: #eff6ff;
+    --accent-blue-glow: rgba(37, 99, 235, 0.12);
+
+    /* Shadow Elevation Levels */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 16px 24px -6px rgba(37, 99, 235, 0.12), 0 6px 12px -4px rgba(0, 0, 0, 0.04);
+
+    /* Transitions */
+    --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,90 +32,147 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fafc;
-    color: #1e293b;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     min-height: 100dvh;
-    padding: 40px 20px;
+    padding: 48px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Header Styling */
+/* ==========================================================================
+   Header Styling
+   ========================================================================== */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+    max-width: 600px;
 }
 
 h1 {
-    font-size: 2.2rem;
-    color: #0f172a;
-    letter-spacing: 0.5px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
     margin-bottom: 8px;
+    background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header h6 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .subtitle {
-    font-size: 1rem;
-    color: #64748b;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 12px;
 }
 
-/* Responsive Grid for Multiple Link Cards */
+header p b {
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Responsive Cards Grid
+   ========================================================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1080px;
 }
 
-/* Project Card Link Styling */
+/* ==========================================================================
+   Project Card Link Styling
+   ========================================================================== */
 .project-card {
-    background-color: #ffffff;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 24px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    transition: all 0.25s ease-in-out;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    gap: 14px;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-standard);
 }
 
 .card-number {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    color: #2563eb;
-    background-color: #eff6ff;
-    padding: 4px 10px;
-    border-radius: 20px;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-bg);
+    padding: 4px 12px;
+    border-radius: 999px;
     align-self: flex-start;
+    letter-spacing: 0.5px;
 }
 
 .project-card h2 {
-    font-size: 1.4rem;
-    color: #0f172a;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
 }
 
 .project-card p {
     font-size: 0.95rem;
-    color: #64748b;
-    line-height: 1.4;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
-/* Hover & Active Animation Effects */
+/* ==========================================================================
+   Interactivity & Animations
+   ========================================================================== */
 .project-card:hover {
-    transform: translateY(-5px);
-    border-color: #2563eb;
-    box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.15);
+    transform: translateY(-6px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-hover);
 }
 
 .project-card:hover h2 {
-    color: #2563eb;
+    color: var(--accent-blue);
 }
 
 .project-card:active {
     transform: translateY(-2px);
+}
+
+/* Accessible Keyboard Focus Ring */
+.project-card:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+/* ==========================================================================
+   Mobile Optimization
+   ========================================================================== */
+@media (max-width: 640px) {
+    body {
+        padding: 32px 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }

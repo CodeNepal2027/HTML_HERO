@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Table [rowspan + colspan]</title>
+</head>
+<body>
+
+    <h2>Exam Results & Internal Nested Marks (rowspan + colspan)</h2>
+
+    <table border="1">
+        <tr>
+            <th rowspan="2">Student Name</th>
+            <th colspan="2">Marks Breakdown</th>
+            <th rowspan="2">Final Grade</th>
+        </tr>
+        <tr>
+            <th>Theory</th>
+            <th>Practical</th>
+        </tr>
+        <tr>
+            <td>Sarah Jenkins</td>
+            <td>80</td>
+            <td>18</td>
+            <td>A+</td>
+        </tr>
+        <tr>
+            <td>Michael Chang</td>
+            <!-- Nested Table inside a single td -->
+            <td colspan="2">
+                <table border="1">
+                    <tr>
+                        <th>Mid-Term</th>
+                        <th>Final-Term</th>
+                    </tr>
+                    <tr>
+                        <td>42</td>
+                        <td>45</td>
+                    </tr>
+                </table>
+            </td>
+            <td>A</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🧩 Combined & Nested Table Example");
+        console.log(`
+            \x3Ctr>
+                \x3Cth rowspan="2">Student Name\x3C/th>
+                \x3Cth colspan="2">Marks Breakdown\x3C/th>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

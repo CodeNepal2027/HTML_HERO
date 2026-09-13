@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Row Span</title>
+</head>
+<body>
+
+    <h2>School Timetable (rowspan Practice)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Day</th>
+            <th>Time Slot</th>
+            <th>Subject</th>
+        </tr>
+        <tr>
+            <!-- rowspan="2" spans this cell across 2 vertical rows -->
+            <td rowspan="2"><strong>Monday</strong></td>
+            <td>09:00 AM - 10:00 AM</td>
+            <td>English Literature</td>
+        </tr>
+        <tr>
+            <td>10:00 AM - 11:00 AM</td>
+            <td>Physics Lab</td>
+        </tr>
+        <tr>
+            <td rowspan="2"><strong>Tuesday</strong></td>
+            <td>09:00 AM - 10:00 AM</td>
+            <td>Mathematics</td>
+        </tr>
+        <tr>
+            <td>10:00 AM - 11:00 AM</td>
+            <td>History</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("↕️ Row Span (rowspan) Example");
+        console.log(`
+            \x3Ctr>
+                \x3C!-- Merges 2 rows vertically -->
+                \x3Ctd rowspan="2">Monday\x3C/td>
+                \x3Ctd>09:00 AM - 10:00 AM\x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
