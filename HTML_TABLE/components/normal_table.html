@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Table</title>
+</head>
+<body>
+
+    <h2>Student Report Card (Basic Table)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Roll No</th>
+            <th>Student Name</th>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Alex Johnson</td>
+            <td>Mathematics</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Priya Sharma</td>
+            <td>Science</td>
+            <td>88</td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>David Miller</td>
+            <td>Computer Science</td>
+            <td>92</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("📊 Basic Table Example");
+        console.log(`
+            \x3Ctable border="1">
+                \x3Ctr>
+                    \x3Cth>Roll No\x3C/th>
+                    \x3Cth>Student Name\x3C/th>
+                    \x3Cth>Subject\x3C/th>
+                    \x3Cth>Marks\x3C/th>
+                \x3C/tr>
+                \x3Ctr>
+                    \x3Ctd>101\x3C/td>
+                    \x3Ctd>Alex Johnson\x3C/td>
+                    \x3Ctd>Mathematics\x3C/td>
+                    \x3Ctd>95\x3C/td>
+                \x3C/tr>
+            \x3C/table>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
