@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description Lists - All Types</title>
+</head>
+<body>
+
+    <h2>Description List Practice - All Use Cases</h2>
+
+    <!-- 1. Basic Single Definition -->
+    <h3>1. Standard Term & Definition</h3>
+    <dl>
+        <dt>
+            <strong>HTML</strong>
+        </dt>
+        <dd>HyperText Markup Language — standard language for creating web page structures.</dd>
+
+        <dt>
+            <strong>CSS</strong>
+        </dt>
+        <dd>Cascading Style Sheets — used to style and format HTML elements.</dd>
+    </dl>
+
+    <hr>
+
+    <!-- 2. Single Term with Multiple Definitions -->
+    <h3>2. Single Term with Multiple Definitions</h3>
+    <dl>
+        <dt>
+            <strong>JavaScript</strong>
+        </dt>
+        <dd>A high-level, interpreted programming language for the web.</dd>
+        <dd>Used for adding interactive behavior, animations, and backend applications.</dd>
+    </dl>
+
+    <hr>
+
+    <!-- 3. Multiple Terms Sharing One Definition -->
+    <h3>3. Multiple Terms Sharing One Definition</h3>
+    <dl>
+        <dt>
+            <strong>PNG</strong>
+        </dt>
+        <dt>
+            <strong>JPEG</strong>
+        </dt>
+        <dt>
+            <strong>WEBP</strong>
+        </dt>
+        <dd>Raster image formats used across modern web applications.</dd>
+    </dl>
+
+    <hr>
+
+    <!-- 4. Key-Value Metadata / Project Details -->
+    <h3>4. Metadata & Key-Value Details</h3>
+    <dl>
+        <dt>
+            <strong>Project Name:</strong>
+        </dt>
+        <dd>Student HTML Practice Portfolio</dd>
+
+        <dt>
+            <strong>Status:</strong>
+        </dt>
+        <dd>In Progress</dd>
+
+        <dt>
+            <strong>Version:</strong>
+        </dt>
+        <dd>1.0.0</dd>
+    </dl>
+
+    <script>
+        console.group("📖 All Description List Examples");
+        console.log(`
+            \x3C!-- 1. STANDARD TERM & DEFINITION -->
+            \x3Cdl>
+                \x3Cdt>
+                    \x3Cstrong>HTML\x3C/strong>
+                \x3C/dt>
+                \x3Cdd>HyperText Markup Language — standard language for page structures.\x3C/dd>
+            \x3C/dl>
+
+            \x3C!-- 2. SINGLE TERM WITH MULTIPLE DEFINITIONS -->
+            \x3Cdl>
+                \x3Cdt>
+                    \x3Cstrong>JavaScript\x3C/strong>
+                \x3C/dt>
+                \x3Cdd>Definition 1...\x3C/dd>
+                \x3Cdd>Definition 2...\x3C/dd>
+            \x3C/dl>
+
+            \x3C!-- 3. MULTIPLE TERMS SHARING ONE DEFINITION -->
+            \x3Cdl>
+                \x3Cdt>
+                    \x3Cstrong>PNG\x3C/strong>
+                \x3C/dt>
+                \x3Cdt>
+                    \x3Cstrong>JPEG\x3C/strong>
+                \x3C/dt>
+                \x3Cdd>Raster image formats...\x3C/dd>
+            \x3C/dl>
+
+            \x3C!-- 4. KEY-VALUE METADATA -->
+            \x3Cdl>
+                \x3Cdt>
+                    \x3Cstrong>Status:\x3C/strong>
+                \x3C/dt>
+                \x3Cdd>In Progress\x3C/dd>
+            \x3C/dl>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

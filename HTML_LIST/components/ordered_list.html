@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered Lists - All Types</title>
+</head>
+<body>
+
+    <h2>Ordered List Practice - All Types</h2>
+
+    <!-- 1. Numbers (Default) -->
+    <h3>1. Numbers (type="1")</h3>
+    <ol type="1">
+        <li>Learn HTML Basics</li>
+        <li>Master Web Forms</li>
+        <li>Build Portfolio</li>
+    </ol>
+
+    <hr>
+
+    <!-- 2. Lowercase Letters -->
+    <h3>2. Lowercase Letters (type="a")</h3>
+    <ol type="a">
+        <li>Design Layout</li>
+        <li>Write Code</li>
+        <li>Test in Browser</li>
+    </ol>
+
+    <hr>
+
+    <!-- 3. Uppercase Letters -->
+    <h3>3. Uppercase Letters (type="A")</h3>
+    <ol type="A">
+        <li>Phase 1<sup>st</sup>: Planning</li>
+        <li>Phase 2<sup>nd</sup>: Development</li>
+        <li>Phase 3<sup>rd</sup>: Deployment</li>
+    </ol>
+
+    <hr>
+
+    <!-- 4. Lowercase Roman Numerals -->
+    <h3>4. Lowercase Roman Numerals (type="i")</h3>
+    <ol type="i">
+        <li>Introduction</li>
+        <li>Methodology</li>
+        <li>Conclusion</li>
+    </ol>
+
+    <hr>
+
+    <!-- 5. Uppercase Roman Numerals -->
+    <h3>5. Uppercase Roman Numerals (type="I")</h3>
+    <ol type="I">
+        <li>Chapter One</li>
+        <li>Chapter Two</li>
+        <li>Chapter Three</li>
+    </ol>
+
+    <hr>
+
+    <!-- 6. Custom Start & Reversed Order -->
+    <h3>6. Custom Start Value (start="5") & Reversed Order (reversed)</h3>
+    <ol type="1" start="5">
+        <li>Starts at 5</li>
+        <li>Item 6</li>
+    </ol>
+
+    <ol type="1" reversed>
+        <li>Countdown 3</li>
+        <li>Countdown 2</li>
+        <li>Countdown 1</li>
+    </ol>
+
+    <script>
+        console.group("🔢 All Ordered List Examples");
+        console.log(`
+            \x3C!-- 1. NUMBERS -->
+            \x3Col type="1">
+                \x3Cli>Learn HTML Basics\x3C/li>
+                \x3Cli>Master Web Forms\x3C/li>
+                \x3Cli>Build Portfolio\x3C/li>
+            \x3C/ol>
+
+            \x3C!-- 2. LOWERCASE LETTERS -->
+            \x3Col type="a">
+                \x3Cli>Design Layout\x3C/li>
+                \x3Cli>Write Code\x3C/li>
+                \x3Cli>Test in Browser\x3C/li>
+            \x3C/ol>
+
+            \x3C!-- 3. UPPERCASE LETTERS -->
+            \x3Col type="A">
+                \x3Cli>Phase 1: Planning\x3C/li>
+                \x3Cli>Phase 2: Development\x3C/li>
+                \x3Cli>Phase 3: Deployment\x3C/li>
+            \x3C/ol>
+
+            \x3C!-- 4. LOWERCASE ROMAN NUMERALS -->
+            \x3Col type="i">
+                \x3Cli>Introduction\x3C/li>
+                \x3Cli>Methodology\x3C/li>
+                \x3Cli>Conclusion\x3C/li>
+            \x3C/ol>
+
+            \x3C!-- 5. UPPERCASE ROMAN NUMERALS -->
+            \x3Col type="I">
+                \x3Cli>Chapter One\x3C/li>
+                \x3Cli>Chapter Two\x3C/li>
+                \x3Cli>Chapter Three\x3C/li>
+            \x3C/ol>
+
+            \x3C!-- 6. EXTRA ATTRIBUTES -->
+            \x3Col type="1" start="5"> ... \x3C/ol>
+            \x3Col type="1" reversed> ... \x3C/ol>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

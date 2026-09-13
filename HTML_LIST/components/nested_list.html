@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Lists - Practice</title>
+</head>
+<body>
+
+    <h2>Nested List Practice - All Patterns</h2>
+
+    <!-- Rule: Always place nested <ol> or <ul> INSIDE an <li> tag, never directly inside a parent list -->
+
+    <!-- 1. Unordered List Inside Ordered List -->
+    <h3>1. Step-by-Step Learning Path (UL inside OL)</h3>
+    <ol type="1">
+        <li>
+            Frontend Development
+            <ul type="disc">
+                <li>HTML5 Structure</li>
+                <li>CSS Layouts</li>
+                <li>JavaScript Basics</li>
+            </ul>
+        </li>
+        <li>
+            Backend Development
+            <ul type="disc">
+                <li>Node.js</li>
+                <li>Database (SQL/MongoDB)</li>
+            </ul>
+        </li>
+    </ol>
+
+    <hr>
+
+    <!-- 2. Ordered List Inside Unordered List -->
+    <h3>2. Project Modules & Execution Steps (OL inside UL)</h3>
+    <ul type="square">
+        <li>
+            Module 1: Authentication
+            <ol type="a">
+                <li>Create Login Form</li>
+                <li>Add Input Validation</li>
+                <li>Connect API</li>
+            </ol>
+        </li>
+        <li>
+            Module 2: User Profile
+            <ol type="a">
+                <li>Display User Details</li>
+                <li>Allow Profile Edit</li>
+            </ol>
+        </li>
+    </ul>
+
+    <hr>
+
+    <!-- 3. Multi-Level Deep Nesting (3 Levels) -->
+    <h3>3. Course Curriculum Hierarchy (Multi-Level UL)</h3>
+    <ul type="disc">
+        <li>
+            Web Development
+            <ul type="circle">
+                <li>
+                    HTML Core
+                    <ul type="square">
+                        <li>Semantics</li>
+                        <li>Forms & Inputs</li>
+                        <li>Tables & Lists</li>
+                    </ul>
+                </li>
+                <li>CSS Core</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        console.group("🪆 All Nested List Examples");
+        console.log(`
+            \x3C!-- 1. UL INSIDE OL -->
+            \x3Col type="1">
+                \x3Cli>
+                    Frontend Development
+                    \x3Cul type="disc">
+                        \x3Cli>HTML5 Structure\x3C/li>
+                        \x3Cli>CSS Layouts\x3C/li>
+                    \x3C/ul>
+                \x3C/li>
+            \x3C/ol>
+
+            \x3C!-- 2. OL INSIDE UL -->
+            \x3Cul type="square">
+                \x3Cli>
+                    Module 1: Authentication
+                    \x3Col type="a">
+                        \x3Cli>Create Login Form\x3C/li>
+                        \x3Cli>Add Input Validation\x3C/li>
+                    \x3C/ol>
+                \x3C/li>
+            \x3C/ul>
+
+            \x3C!-- 3. MULTI-LEVEL DEEP NESTING -->
+            \x3Cul type="disc">
+                \x3Cli>
+                    Web Development
+                    \x3Cul type="circle">
+                        \x3Cli>
+                            HTML Core
+                            \x3Cul type="square">
+                                \x3Cli>Forms & Inputs\x3C/li>
+                            \x3C/ul>
+                        \x3C/li>
+                    \x3C/ul>
+                \x3C/li>
+            \x3C/ul>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
