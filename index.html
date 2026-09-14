@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <!-- OPTECH Favicon --> 
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-    <link rel="stylesheet" href="./style.css">
+    <!-- Bootstrap Icons 5 (official) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>HTML HERO</title>
 </head>
 <body>
 
-    <!-- NAVIGATION BAR -->
+    <!-- NAVIGATION BAR (icons from Bootstrap Icons) -->
     <nav class="navbar">
         <div class="navbar-container">
             <a class="navbar-brand" onclick="loadGrid()">
@@ -18,125 +20,122 @@
                 <span class="brand-title">HERO</span>
             </a>
             <ul class="navbar-links">
-                <li><a onclick="loadGrid()" class="nav-link active">Projects</a></li>
-                <li><a onclick="loadGrid()" target="_blank" rel="noopener noreferrer" class="nav-link nav-btn">Live Site ↗</a></li>
-                <!-- <li><a href="https://htmlhero.vercel.app" target="_blank" rel="noopener noreferrer" class="nav-link nav-btn">Live Site ↗</a></li> -->
+                <li>
+                    <a onclick="loadGrid()" class="nav-link active">
+                        <i class="bi bi-grid-3x3-gap-fill"></i>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://csshero.vercel.app" rel="noopener noreferrer" target="_blank" class="nav-link active">
+                        <i class="bi bi-filetype-css"></i>
+                        <span class="nav-text">CSS Hero</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://sujan140.com.np" target="_blank" rel="noopener noreferrer" class="nav-link nav-btn">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span class="nav-text">Live Site</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
 
     <header class="hero-header">
-        <h1>HTML HERO</h1>
+        <h1>
+            <i class="bi bi-code-slash"></i> HTML HERO
+        </h1>
         <h6 class="subtitle">Select a project below to start practicing HTML fundamentals</h6>
-        <p class="url-tag"><b>url:</b> https://htmlhero.vercel.app</p>
+        <p class="url-tag"><i class="bi bi-link-45deg"></i> <b>url:</b> https://htmlhero.vercel.app</p>
     </header>
 
+
+    <!-- ============= MAIN SECTION [SWITCHABLE ALWAYS IN IFRAME] ================-->
     <main id="app-main" class="projects-grid">
 
         <!-- Project 1 = [ PORTFOLIO ] -->
         <a href="./PORTFOLIO/index.html" class="project-card">
-            <span class="card-number">01</span>
+            <div class="card-header">
+                <span class="card-number"><i class="bi bi-hash"></i> 01</span>
+                <i class="bi bi-person-badge card-icon"></i>
+            </div>
             <h2>PORTFOLIO</h2>
             <p>
                 Simple portfolio only using raw html. 
                 <br>
-                Tag used: [ Table, List, Form, iframe,..etc ]
+                Tag used: <i>[ Table, List, Form, iframe,..etc ]</i>
             </p>
         </a>
 
         <!-- Project 2 = [ HTML_LIST ] -->
         <a href="./HTML_LIST/index.html" class="project-card">
-            <span class="card-number">02</span>
+            <div class="card-header">
+                <span class="card-number"><i class="bi bi-hash"></i> 02</span>
+                <i class="bi bi-list-ul card-icon"></i>
+            </div>
             <h2>HTML List</h2>
             <p>
                 Simple HTML Practice projects. 
                 <br>
-                list types: [ dl, ul, ol, nested,..etc ]
+                list types: <i>[ dl, ul, ol, nested,..etc ]</i>
             </p>
         </a>
 
         <!-- Project 3 = [ HTML_TABLE ] -->
         <a href="./HTML_TABLE/index.html" class="project-card">
-            <span class="card-number">03</span>
+            <div class="card-header">
+                <span class="card-number"><i class="bi bi-hash"></i> 03</span>
+                <i class="bi bi-table card-icon"></i>
+            </div>
             <h2>HTML Table</h2>
             <p>
                 Table layout & structured data practice.
                 <br>
-                elements: [ table, tr, th, td, rowspan, colspan ]
+                elements: <i>[ table, tr, th, td, rowspan, colspan ]</i>
             </p>
         </a>
 
         <!-- Project 4 = [ HTML_SELECT ] -->
         <a href="./HTML_SELECT/index.html" class="project-card">
-            <span class="card-number">04</span>
+            <div class="card-header">
+                <span class="card-number"><i class="bi bi-hash"></i> 04</span>
+                <i class="bi bi-menu-button-wide card-icon"></i>
+            </div>
             <h2>HTML Select</h2>
             <p>
                 Select bar form type.
                 <br>
-                elements: [ select, datalist, optgroup, ... etc ]
+                elements: <i>[ select, datalist, optgroup, ... etc ]</i>
             </p>
         </a>
 
         <!-- Project 5 = [ HTML_FORM ] -->
         <a href="./HTML_FORM/index.html" class="project-card">
-            <span class="card-number">05</span>
+            <div class="card-header">
+                <span class="card-number"><i class="bi bi-hash"></i> 05</span>
+                <i class="bi bi-input-cursor-text card-icon"></i>
+            </div>
             <h2>HTML Form</h2>
             <p>
                 HTML Form including all forms type.
                 <br>
-                type: [ radio, input, select, datalist, ... etc ]
+                type: <i>[ radio, input, select, datalist, ... etc ]</i>
             </p>
         </a>
 
-        <!-- Project 4 = [ HTML_FORM ] -->
-        <!-- <a href="./HTML_FORM/index.html" class="project-card">
-            <span class="card-number">04</span>
-            <h2>HTML Form</h2>
-            <p>
-                User input & form validation practice.
-                <br>
-                inputs: [ text, email, password, radio, checkbox ]
-            </p>
-        </a> -->
-
-        <!-- Project 5 = [ HTML_SELECT_BAR ] -->
-        <!-- <a href="./HTML_SELECT_BAR/index.html" class="project-card">
-            <span class="card-number">05</span>
-            <h2>HTML Select Bar</h2>
-            <p>
-                Dropdown menus & multi-option practice.
-                <br>
-                elements: [ select, option, optgroup, datalist ]
-            </p>
-        </a> -->
-
-        <!-- Project 6 = [ HTML_TEXT ] -->
-        <!-- <a href="./HTML_TEXT/index.html" class="project-card">
-            <span class="card-number">06</span>
-            <h2>HTML Text</h2>
-            <p>
-                Text formatting & typography tags practice.
-                <br>
-                tags: [ h1-h6, p, b, i, strong, em, mark, code ]
-            </p>
-        </a> -->
-
-        <!-- Add future projects here simply by duplicating a block like below: -->
-        <!-- 
-        <a href="./PROJECT_7/index.html" class="project-card">
-            <span class="card-number">07</span>
-            <h2>E-COMMERCE</h2>
-            <p>Practice semantic layout & product tables.</p>
-        </a> 
-        -->
     </main>
+
+    <!-- ============= FOOTER ============= -->
+
+
 
     <!-- Vercel Web Analytics -->
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-
+    
     <script>
         console.log(`
             \x3C!-- iframe CODE USAGE EXAMPLE -->
@@ -163,47 +162,171 @@
         `);
     </script>
 
-    <!-- SPA Logic & Dynamic Auto-Height adjustment -->
-    <script>
-        const mainContainer = document.getElementById('app-main');
-        const initialGridHTML = mainContainer.innerHTML;
+<!-- SPA Logic: iframe-aware back navigation + live auto-height -->
+<script>
+    const mainContainer = document.getElementById('app-main');
+    const initialGridHTML = mainContainer.innerHTML;
 
-        function attachCardListeners() {
-            const cards = mainContainer.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                card.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const projectUrl = card.getAttribute('href');
-                    loadProject(projectUrl);
-                });
+    let iframeEntryUrl = null;
+    let heightObserver = null;     // MutationObserver instance
+    let heightInterval = null;     // Fallback poller
+
+    function attachCardListeners() {
+        const cards = mainContainer.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                loadProject(card.getAttribute('href'));
             });
-        }
+        });
+    }
 
-        function loadProject(url) {
-            mainContainer.className = "spa-container";
-            mainContainer.innerHTML = `
-                <button class="back-btn" onclick="loadGrid()">← Back to Projects</button>
-                <iframe src="${url}" class="project-iframe" title="Project View" scrolling="no" onload="autoResizeIframe(this)"></iframe>
-            `;
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    function loadProject(url) {
+        iframeEntryUrl = url;
+        stopHeightTracking();
 
-        function autoResizeIframe(iframe) {
+        mainContainer.className = "spa-container";
+        mainContainer.innerHTML = `
+            <button class="back-btn" onclick="goBack()">
+                <i class="bi bi-arrow-left"></i> Back
+            </button>
+            <iframe src="${url}" class="project-iframe" title="Project View"
+                    scrolling="no"
+                    onload="onIframeLoad(this)"></iframe>
+        `;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function onIframeLoad(iframe) {
+        autoResizeIframe(iframe);
+        startHeightTracking(iframe);
+    }
+
+    /**
+     * Continuously keep the iframe height matched to its inner document.
+     * Uses MutationObserver (instant) + setInterval (safety net every 500ms).
+     */
+    function startHeightTracking(iframe) {
+        stopHeightTracking();
+
+        try {
+            const innerDoc = iframe.contentWindow.document;
+
+            // 1) Observe any DOM change inside the iframe
+            heightObserver = new MutationObserver(() => {
+                autoResizeIframe(iframe);
+            });
+            heightObserver.observe(innerDoc.body || innerDoc.documentElement, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                characterData: true
+            });
+
+            // 2) Poll as a fallback (some navigations replace the whole document,
+            //    which breaks the observer — the interval reattaches automatically)
+            heightInterval = setInterval(() => {
+                // If the inner document has been swapped (new navigation),
+                // reattach the observer to the new body.
+                try {
+                    const currentDoc = iframe.contentWindow.document;
+                    if (heightObserver && currentDoc.body) {
+                        // Disconnect & reconnect to the new body
+                        heightObserver.disconnect();
+                        heightObserver.observe(currentDoc.body, {
+                            childList: true,
+                            subtree: true,
+                            attributes: true,
+                            characterData: true
+                        });
+                    }
+                } catch (_) { /* ignore */ }
+
+                autoResizeIframe(iframe);
+            }, 500);
+        } catch (err) {
+            console.warn("Height tracking unavailable:", err);
+        }
+    }
+
+    function stopHeightTracking() {
+        if (heightObserver) {
+            heightObserver.disconnect();
+            heightObserver = null;
+        }
+        if (heightInterval) {
+            clearInterval(heightInterval);
+            heightInterval = null;
+        }
+    }
+
+    function goBack() {
+        const iframe = mainContainer.querySelector('.project-iframe');
+
+        if (iframe && iframe.contentWindow) {
             try {
-                iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
+                const inner = iframe.contentWindow;
+                const innerLoc = inner.location.href;
+                const innerHist = inner.history;
+
+                const entryHref = new URL(iframeEntryUrl, window.location.href).href;
+                const onEntryPage = isSamePage(innerLoc, entryHref);
+
+                if (!onEntryPage && innerHist.length > 1) {
+                    inner.history.back();
+                    // The interval inside startHeightTracking will pick up the new height
+                    setTimeout(() => autoResizeIframe(iframe), 250);
+                    return;
+                }
             } catch (err) {
-                iframe.style.height = '100vh';
+                console.warn("Cannot read iframe history:", err);
             }
         }
 
-        function loadGrid() {
-            mainContainer.className = "projects-grid";
-            mainContainer.innerHTML = initialGridHTML;
-            attachCardListeners();
-        }
+        loadGrid();
+    }
 
+    function isSamePage(a, b) {
+        try {
+            const ua = new URL(a);
+            const ub = new URL(b);
+            let pa = ua.pathname.replace(/\/index\.html$/, "/");
+            let pb = ub.pathname.replace(/\/index\.html$/, "/");
+            return pa === pb;
+        } catch {
+            return a === b;
+        }
+    }
+
+    function autoResizeIframe(iframe) {
+        try {
+            const doc = iframe.contentWindow.document;
+            const h = Math.max(
+                doc.body ? doc.body.scrollHeight : 0,
+                doc.documentElement ? doc.documentElement.scrollHeight : 0
+            );
+            // +24px buffer prevents last-row clipping from rounding / borders / shadows
+            if (h > 0) iframe.style.height = (h + 24) + 'px';
+        } catch {
+            iframe.style.height = '100dvh';
+        }
+    }
+
+    function loadGrid() {
+        stopHeightTracking();
+        iframeEntryUrl = null;
+        mainContainer.className = "projects-grid";
+        mainContainer.innerHTML = initialGridHTML;
         attachCardListeners();
-    </script>
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    attachCardListeners();
+
+    // Footer year
+    const yearEl = document.getElementById('footer-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

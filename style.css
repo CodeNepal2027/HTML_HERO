@@ -1,13 +1,19 @@
 /* ==========================================================================
-   Modern CSS Reset & Theme Variables
-   ========================================================================== */
+    Modern CSS Reset & Theme Variables (identical, with HTML accent colour)
+    ========================================================================== */
 :root {
     /* Color Palette */
     --bg-main: #f8fafc;
     --bg-card: #ffffff;
     --border-color: #e2e8f0;
     --border-hover: #2563eb;
+
+    --spa-container-max-width: 1350px;
     
+    /* HTML brand colour – used as accent for icons and badges */
+    --html-color: #F54927;
+    --html-glow: rgba(245, 73, 39, 0.12);
+
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-muted: #64748b;
@@ -36,16 +42,19 @@ body {
     background-color: var(--bg-main);
     color: var(--text-primary);
     min-height: 100dvh;
-    padding: 100px 24px 48px 24px; /* Added top padding so content doesn't hide under fixed navbar */
+    padding: 100px 24px 48px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     -webkit-font-smoothing: antialiased;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 
 /* ==========================================================================
-   Modern Glassmorphism Navbar
-   ========================================================================== */
+    Modern Glassmorphism Navbar (responsive)
+    ========================================================================== */
 .navbar {
     width: 100%;
     position: fixed;
@@ -53,8 +62,8 @@ body {
     left: 0;
     z-index: 1000;
     background: rgba(15, 23, 42, 0.88);
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
@@ -66,6 +75,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
 }
 
 .navbar-brand {
@@ -74,15 +84,16 @@ body {
     gap: 8px;
     text-decoration: none;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .brand-badge {
-    background-color: var(--accent-blue);
+    background-color: var(--html-color);
     color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 800;
-    padding: 3px 8px;
-    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 3px 5px;
+    border-radius: 4px;
     letter-spacing: 0.5px;
 }
 
@@ -98,6 +109,8 @@ body {
     align-items: center;
     gap: 16px;
     list-style: none;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav-link {
@@ -109,6 +122,14 @@ body {
     border-radius: 8px;
     transition: var(--transition-standard);
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.nav-link i {
+    font-size: 1rem;
 }
 
 .nav-link:hover {
@@ -117,18 +138,18 @@ body {
 }
 
 .nav-link.nav-btn {
-    background-color: var(--accent-blue);
+    background-color: var(--html-color);
     color: #ffffff;
     font-weight: 600;
 }
 
 .nav-link.nav-btn:hover {
-    background-color: #1d4ed8;
+    background-color: #d43f1f;
 }
 
 /* ==========================================================================
-   Hero Header Section
-   ========================================================================== */
+    Hero Header Section
+    ========================================================================== */
 .hero-header {
     text-align: center;
     margin-bottom: 36px;
@@ -143,6 +164,15 @@ body {
     font-weight: 800;
     letter-spacing: -0.03em;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hero-header h1 i {
+    color: var(--html-color);
+    font-size: 2.2rem;
 }
 
 .hero-header .subtitle {
@@ -158,12 +188,21 @@ body {
     padding: 4px 12px;
     border-radius: 999px;
     margin-top: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
-/* SPA Layout & Seamless Iframe Styles */
+.hero-header .url-tag i {
+    color: var(--html-color);
+}
+
+/* ==========================================================================
+    SPA Layout & Seamless Iframe Styles
+    ========================================================================== */
 .spa-container {
     width: 100%;
-    max-width: 1080px;
+    max-width: var(--spa-container-max-width);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -173,7 +212,7 @@ body {
     margin-bottom: 20px;
     padding: 10px 20px;
     cursor: pointer;
-    background-color: var(--accent-blue);
+    background-color: var(--html-color);
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -181,27 +220,35 @@ body {
     font-size: 0.9rem;
     box-shadow: var(--shadow-sm);
     transition: var(--transition-standard);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .back-btn:hover {
-    background-color: #1d4ed8;
+    background-color: #d43f1f;
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
 
+.back-btn i {
+    font-size: 1rem;
+}
+
 .project-iframe {
     width: 100%;
+    padding: 10px;
     border: none;
     border-radius: 12px;
-    background-color: #ffffff;
+    background-color: #f3f3f3;
     box-shadow: var(--shadow-md);
     overflow: hidden;
     transition: height 0.2s ease;
 }
 
 /* ==========================================================================
-   Responsive Cards Grid
-   ========================================================================== */
+    Responsive Cards Grid
+    ========================================================================== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -211,8 +258,8 @@ body {
 }
 
 /* ==========================================================================
-   Project Card Link Styling
-   ========================================================================== */
+    Project Card Link Styling
+    ========================================================================== */
 .project-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -228,15 +275,31 @@ body {
     transition: var(--transition-standard);
 }
 
+/* card header area with number + icon */
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .card-number {
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--accent-blue);
-    background-color: var(--accent-blue-bg);
+    color: var(--html-color);
+    background-color: var(--html-glow);
     padding: 4px 12px;
     border-radius: 999px;
-    align-self: flex-start;
     letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    color: var(--html-color);
+    opacity: 0.85;
+    transition: transform 0.2s ease;
 }
 
 .project-card h2 {
@@ -253,17 +316,28 @@ body {
     line-height: 1.6;
 }
 
+.project-card p i {
+    color: var(--html-color);
+    font-style: normal;
+    font-weight: 500;
+}
+
 /* ==========================================================================
-   Interactivity & Animations
-   ========================================================================== */
+    Interactivity & Animations
+    ========================================================================== */
 .project-card:hover {
     transform: translateY(-6px);
-    border-color: var(--border-hover);
-    box-shadow: var(--shadow-hover);
+    border-color: var(--html-color);
+    box-shadow: 0 16px 24px -6px rgba(245, 73, 39, 0.12), 0 6px 12px -4px rgba(0, 0, 0, 0.04);
 }
 
 .project-card:hover h2 {
-    color: var(--accent-blue);
+    color: var(--html-color);
+}
+
+.project-card:hover .card-icon {
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 .project-card:active {
@@ -272,13 +346,83 @@ body {
 
 /* Accessible Keyboard Focus Ring */
 .project-card:focus-visible {
-    outline: 2px solid var(--accent-blue);
+    outline: 2px solid var(--html-color);
     outline-offset: 4px;
 }
 
 /* ==========================================================================
-   Mobile Optimization
-   ========================================================================== */
+    Site Footer
+    ========================================================================== */
+.site-footer {
+    width: 100%;
+    max-width: 1080px;
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.footer-text {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-text i {
+    color: var(--html-color);
+    font-size: 0.95rem;
+}
+
+.footer-heart {
+    color: var(--html-color) !important;
+    animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.15); }
+}
+
+.footer-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-meta a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition-standard);
+}
+
+.footer-meta a:hover {
+    color: var(--html-color);
+    text-decoration: underline;
+}
+
+.footer-dot {
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+    Mobile Optimization
+    ========================================================================== */
 @media (max-width: 640px) {
     body {
         padding: 90px 16px 32px 16px;
@@ -288,11 +432,62 @@ body {
         font-size: 2rem;
     }
 
-    .navbar-container {
-        padding: 12px 16px;
+    .hero-header h1 i {
+        font-size: 1.8rem;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Navbar: small screens */
+    .navbar-container {
+        padding: 10px 12px;
+        gap: 6px;
+    }
+
+    .brand-title {
+        font-size: 1rem;
+    }
+
+    .brand-badge {
+        font-size: 0.8rem;
+        padding: 2px 5px;
+    }
+
+    .navbar-links {
+        gap: 4px;
+    }
+
+    .nav-link {
+        font-size: 0.82rem;
+        padding: 6px 9px;
+        gap: 4px;
+        border-radius: 6px;
+    }
+
+    .nav-link i {
+        font-size: 0.95rem;
+    }
+
+    /* Footer: tighter on mobile */
+    .site-footer {
+        margin-top: 40px;
+        padding-top: 20px;
+    }
+}
+
+/* Very narrow phones — hide nav text, icons only */
+@media (max-width: 400px) {
+    .nav-link .nav-text {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 7px 9px;
+    }
+
+    .nav-link i {
+        font-size: 1.05rem;
     }
 }
