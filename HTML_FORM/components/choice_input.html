@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML HERO || Choice Inputs Practice</title>
+</head>
+<body>
+
+    <h2>Radio Buttons & Checkboxes</h2>
+
+    <form action="#" method="get">
+        <!-- Radio Buttons (Single Choice) -->
+        <p><b>Select Gender:</b></p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+
+        <input type="radio" id="female" name="gender" value="female" checked>
+        <label for="female">Female (Pre-checked)</label><br>
+
+        <input type="radio" id="other" name="gender" value="other" disabled>
+        <label for="other">Other (Disabled)</label><br><br>
+
+        <hr>
+
+        <!-- Checkboxes (Multiple Choice) -->
+        <p><b>Select Favorite Subjects:</b></p>
+        <input type="checkbox" id="math" name="subject" value="math" checked>
+        <label for="math">Mathematics (Pre-checked)</label><br>
+
+        <input type="checkbox" id="science" name="subject" value="science" checked>
+        <label for="science">Science (Pre-checked)</label><br>
+
+        <input type="checkbox" id="history" name="subject" value="history">
+        <label for="history">History</label><br>
+
+        <input type="checkbox" id="art" name="subject" value="art" disabled>
+        <label for="art">Art (Disabled)</label><br><br>
+
+        <!-- Form Action Buttons -->
+        <button type="submit">Submit Choices</button>
+        <button type="reset">Cancel Choice Selection</button>
+    </form>
+
+    <script>
+        console.group("☑️ Choice Input Code Examples");
+        console.log(`
+            \x3C!-- Radio Buttons -->
+            \x3Cinput type="radio" id="female" name="gender" value="female" checked>
+            \x3Cinput type="radio" id="other" name="gender" value="other" disabled>
+
+            \x3C!-- Checkboxes -->
+            \x3Cinput type="checkbox" id="math" name="subject" value="math" checked>
+            \x3Cinput type="checkbox" id="art" name="subject" value="art" disabled>
+
+            \x3C!-- Form Buttons -->
+            \x3Cbutton type="submit">Submit Choices\x3C/button>
+            \x3Cbutton type="reset">Cancel Choice Selection\x3C/button>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

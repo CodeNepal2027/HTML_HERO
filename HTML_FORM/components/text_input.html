@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML HERO || Text Inputs Practice</title>
+</head>
+<body>
+
+    <h2>Text & Contact Input Fields</h2>
+
+    <form action="#" method="get">
+        <label for="username">User Full Name:</label><br>
+        <input type="text" id="username" name="username" placeholder="John Doe" value="John Doe"><br><br>
+
+        <label for="useremail">Email Address:</label><br>
+        <input type="email" id="useremail" name="useremail" placeholder="john@example.com"><br><br>
+
+        <label for="userpass">Password:</label><br>
+        <input type="password" id="userpass" name="userpass" value="secret123"><br><br>
+
+        <label for="userphone">Phone Number (Disabled):</label><br>
+        <input type="tel" id="userphone" name="userphone" value="+1 555-0199" disabled><br><br>
+
+        <label for="bio">Short Bio (Readonly):</label><br>
+        <textarea id="bio" name="bio" rows="4" cols="40" readonly>Student account registered for Class 9.</textarea><br><br>
+
+        <!-- Form Action Buttons -->
+        <input type="submit" value="Submit Text Form">
+        <input type="reset" value="Cancel / Reset Form">
+    </form>
+
+    <script>
+        console.group("📝 Text Input Code Examples");
+        console.log(`
+            \x3Cinput type="text" id="username" name="username" placeholder="John Doe" value="John Doe">
+            \x3Cinput type="email" id="useremail" name="useremail" placeholder="john@example.com">
+            \x3Cinput type="password" id="userpass" name="userpass" value="secret123">
+            \x3Cinput type="tel" id="userphone" name="userphone" value="+1 555-0199" disabled>
+            \x3Ctextarea id="bio" name="bio" rows="4" cols="40" readonly>Student account registered for Class 9.\x3C/textarea>
+            
+            \x3Cinput type="submit" value="Submit Text Form">
+            \x3Cinput type="reset" value="Cancel / Reset Form">
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
