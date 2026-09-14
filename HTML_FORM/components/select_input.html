@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML HERO || Select & Datalist Practice</title>
+</head>
+<body>
+
+    <h2>Form Selection Controls</h2>
+
+    <form action="#" method="get">
+        <!-- Form Select Menu -->
+        <label for="grade">Select Class Grade:</label><br>
+        <select id="grade" name="grade">
+            <option value="" disabled>-- Select Grade --</option>
+            <option value="7">Grade 7</option>
+            <option value="8">Grade 8</option>
+            <option value="9" selected>Grade 9 (Default)</option>
+            <option value="10" disabled>Grade 10 (Full)</option>
+        </select>
+
+        <br><br>
+
+        <!-- Searchable Datalist Input -->
+        <label for="city">Type/Select City (Searchable):</label><br>
+        <input list="cities" id="city" name="city" placeholder="Start typing...">
+        <datalist id="cities">
+            <option value="New York">
+            <option value="London">
+            <option value="Tokyo">
+            <option value="Sydney">
+        </datalist>
+
+        <br><br>
+
+        <!-- Form Action Buttons -->
+        <input type="submit" value="Submit Selection">
+        <input type="reset" value="Cancel Selection">
+    </form>
+
+    <script>
+        console.group("🔽 Select & Datalist Code Examples");
+        console.log(`
+            \x3Cselect id="grade" name="grade">
+                \x3Coption value="" disabled>-- Select Grade --\x3C/option>
+                \x3Coption value="9" selected>Grade 9 (Default)\x3C/option>
+                \x3Coption value="10" disabled>Grade 10 (Full)\x3C/option>
+            \x3C/select>
+
+            \x3Cinput list="cities" id="city" name="city" placeholder="Start typing...">
+            \x3Cdatalist id="cities">
+                \x3Coption value="New York">
+                \x3Coption value="London">
+            \x3C/datalist>
+
+            \x3Cinput type="submit" value="Submit Selection">
+            \x3Cinput type="reset" value="Cancel Selection">
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

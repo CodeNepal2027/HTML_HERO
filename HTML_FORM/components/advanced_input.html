@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML HERO || Advanced Inputs Practice</title>
+</head>
+<body>
+
+    <h2>Special & Picker Inputs</h2>
+
+    <form action="#" method="get">
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" value="2010-05-15"><br><br>
+
+        <label for="favcolor">Pick Favorite Color:</label><br>
+        <input type="color" id="favcolor" name="favcolor" value="#3b82f6"><br><br>
+
+        <label for="avatar">Upload Profile Picture:</label><br>
+        <input type="file" id="avatar" name="avatar" accept="image/*"><br><br>
+
+        <label for="volume">Volume Level (Range):</label><br>
+        <input type="range" id="volume" name="volume" min="0" max="100" value="70"><br><br>
+
+        <!-- Form Action Buttons -->
+        <input type="submit" value="Submit Form Data">
+        <input type="reset" value="Cancel / Reset Form">
+    </form>
+
+    <script>
+        console.group("⚙️ Advanced Input Code Examples");
+        console.log(`
+            \x3Cinput type="date" id="dob" name="dob" value="2010-05-15">
+            \x3Cinput type="color" id="favcolor" name="favcolor" value="#3b82f6">
+            \x3Cinput type="file" id="avatar" name="avatar" accept="image/*">
+            \x3Cinput type="range" id="volume" name="volume" min="0" max="100" value="70">
+            \x3Cinput type="submit" value="Submit Form Data">
+            \x3Cinput type="reset" value="Cancel / Reset Form">
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
