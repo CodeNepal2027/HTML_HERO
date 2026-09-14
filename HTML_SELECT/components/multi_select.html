@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Select Box</title>
+</head>
+<body>
+
+    <h2>Multi-Select Box (With selected & disabled options) - [(Hold Ctrl / Cmd to pick multiple)]</h2>
+
+    <form>
+        <label for="hobbies">Choose Your Hobbies:</label>
+        <br><br>
+        <select name="hobbies" id="hobbies" multiple size="5">
+            <!-- Multiple selected items by default -->
+            <option value="reading" selected>Reading Books</option>
+            <option value="coding" selected>Coding & Web Dev</option>
+            <option value="sports">Playing Sports</option>
+            <!-- Disabled option -->
+            <option value="music" disabled>Listening to Music (Maintenance)</option>
+            <option value="gaming">Video Games</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("☑️ Multiple Select Example");
+        console.log(`
+            \x3Cselect name="hobbies" multiple size="5">
+                \x3Coption value="reading" selected>Reading Books\x3C/option>
+                \x3Coption value="coding" selected>Coding & Web Dev\x3C/option>
+                \x3Coption value="music" disabled>Listening to Music\x3C/option>
+                \x3Coption value="coding" >Video Games\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
