@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Select Dropdown</title>
+</head>
+<body>
+
+    <h2>Basic Select Dropdown (With selected & disabled)</h2>
+
+    <form>
+        <label for="country">Select Your Country:</label>
+        <select name="country" id="country">
+            <!-- disabled placeholder option -->
+            <option value="" disabled selected>-- Choose a country --</option>
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <!-- selected default option -->
+            <option value="india">India</option>
+            <!-- disabled individual option -->
+            <option value="uk" disabled>United Kingdom (Unavailable)</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("🔽 Basic Select Example");
+        console.log(`
+            \x3Cselect name="country">
+                \x3Coption value="" disabled selected>-- Choose a country --\x3C/option>
+                \x3Coption value="india">India\x3C/option>
+                \x3Coption value="uk" disabled>United Kingdom (Unavailable)\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

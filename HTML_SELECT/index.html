@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Select Bar Practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1e293b;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        /* Container for navigation buttons */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        /* Base Button Styles */
+        .btn {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px 24px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15);
+            filter: brightness(1.08);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Individual Button Colors */
+        .btn-basic {
+            background-color: #3b82f6; /* Blue */
+        }
+
+        .btn-multi {
+            background-color: #10b981; /* Emerald Green */
+        }
+
+        .btn-optgroup {
+            background-color: #f59e0b; /* Amber/Orange */
+        }
+
+        .btn-searchable {
+            background-color: #8b5cf6; /* Purple */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Select Practice Modules</h1>
+
+    <div class="button-container">
+        <!-- Basic Select Section -->
+        <a href="./components/basic_select.html" rel="noopener noreferrer" class="btn btn-basic">Basic Select</a>
+
+        <!-- Multi Select Section -->
+        <a href="./components/multi_select.html" rel="noopener noreferrer" class="btn btn-multi">Multi Select</a>
+
+        <!-- Optgroup Select Section -->
+        <a href="./components/optgroup_select.html" rel="noopener noreferrer" class="btn btn-optgroup">Optgroup Select</a>
+
+        <!-- Searchable Select Section -->
+        <a href="./components/searchable_select.html" rel="noopener noreferrer" class="btn btn-searchable">Searchable Select</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Searchable Select (Datalist)</title>
+</head>
+<body>
+
+    <h2>Searchable Select Bar (Pure HTML Datalist)</h2>
+
+    <form>
+        <!-- 1. Active Searchable Input with Default Selected Value -->
+        <label for="country">Select or Type a Country (Pre-filled):</label><br>
+        <input list="country-list" id="country" name="country" value="India" placeholder="Start typing...">
+        <datalist id="country-list">
+            <option value="China">
+            <option value="India">
+            <option value="Australia">
+            <option value="United Kingdom">
+            <option value="United States">
+        </datalist>
+
+        <br><br>
+
+        <!-- 2. Searchable Input that is Completely Disabled -->
+        <label for="country-disabled">Select Country (Locked / Disabled):</label><br>
+        <input list="country-list" id="country-disabled" name="country-disabled" value="United States" disabled>
+
+        <br><br>
+
+        <!-- 3. Datalist using Label Attributes (Shows Description alongside Value) -->
+        <label for="subject">Search Subject (With Custom Labels):</label><br>
+        <input list="subject-list" id="subject" name="subject" placeholder="Type a subject...">
+        <datalist id="subject-list">
+            <option value="PHY" label="Physics"></option>
+            <option value="CHEM" label="Chemistry"></option>
+            <option value="MATH" label="Mathematics" disabled></option>
+            <option value="BIO" label="Biology"></option>
+        </datalist>
+    </form>
+
+    <script>
+        console.group("🔍 Searchable Select (Datalist) Code Examples");
+        console.log(`
+            \x3C!-- 1. Basic Datalist with Pre-selected Value -->
+            \x3Cinput list="country-list" name="country" value="India" placeholder="Start typing...">
+            \x3Cdatalist id="country-list">
+                \x3Coption value="India">
+                \x3Coption value="China">
+                \x3Coption value="United States">
+            \x3C/datalist>
+
+            \x3C!-- 2. Disabled Search Input -->
+            \x3Cinput list="country-list" name="country-disabled" value="United States" disabled>
+
+            \x3C!-- 3. Datalist Options with Labels -->
+            \x3Cdatalist id="subject-list">
+                \x3Coption value="PHY" label="Physics">\x3C/option>
+                \x3Coption value="MATH" label="Mathematics" disabled>\x3C/option>
+            \x3C/datalist>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
