@@ -10,16 +10,31 @@
 </head>
 <body>
 
-    <header>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a class="navbar-brand" onclick="loadGrid()">
+                <span class="brand-badge">HTML</span>
+                <span class="brand-title">HERO</span>
+            </a>
+            <ul class="navbar-links">
+                <li><a onclick="loadGrid()" class="nav-link active">Projects</a></li>
+                <li><a onclick="loadGrid()" target="_blank" rel="noopener noreferrer" class="nav-link nav-btn">Live Site ↗</a></li>
+                <!-- <li><a href="https://htmlhero.vercel.app" target="_blank" rel="noopener noreferrer" class="nav-link nav-btn">Live Site ↗</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-header">
         <h1>HTML HERO</h1>
-        <h6 class="subtitle"> Select a project below to start practicing HTML fundamentals</h6>
-        <p><b>url:</b> https://htmlhero.vercel.app</p>
+        <h6 class="subtitle">Select a project below to start practicing HTML fundamentals</h6>
+        <p class="url-tag"><b>url:</b> https://htmlhero.vercel.app</p>
     </header>
 
-    <main class="projects-grid">
+    <main id="app-main" class="projects-grid">
 
         <!-- Project 1 = [ PORTFOLIO ] -->
-        <a href="./PORTFOLIO/index.html" class="project-card" target="_blank">
+        <a href="./PORTFOLIO/index.html" class="project-card">
             <span class="card-number">01</span>
             <h2>PORTFOLIO</h2>
             <p>
@@ -30,7 +45,7 @@
         </a>
 
         <!-- Project 2 = [ HTML_LIST ] -->
-        <a href="./HTML_LIST/index.html" class="project-card" target="_blank">
+        <a href="./HTML_LIST/index.html" class="project-card">
             <span class="card-number">02</span>
             <h2>HTML List</h2>
             <p>
@@ -41,7 +56,7 @@
         </a>
 
         <!-- Project 3 = [ HTML_TABLE ] -->
-        <a href="./HTML_TABLE/index.html" class="project-card" target="_blank">
+        <a href="./HTML_TABLE/index.html" class="project-card">
             <span class="card-number">03</span>
             <h2>HTML Table</h2>
             <p>
@@ -52,7 +67,7 @@
         </a>
 
         <!-- Project 4 = [ HTML_SELECT ] -->
-        <a href="./HTML_SELECT/index.html" class="project-card" target="_blank">
+        <a href="./HTML_SELECT/index.html" class="project-card">
             <span class="card-number">04</span>
             <h2>HTML Select</h2>
             <p>
@@ -63,7 +78,7 @@
         </a>
 
         <!-- Project 5 = [ HTML_FORM ] -->
-        <a href="./HTML_FORM/index.html" class="project-card" target="_blank">
+        <a href="./HTML_FORM/index.html" class="project-card">
             <span class="card-number">05</span>
             <h2>HTML Form</h2>
             <p>
@@ -74,7 +89,7 @@
         </a>
 
         <!-- Project 4 = [ HTML_FORM ] -->
-        <!-- <a href="./HTML_FORM/index.html" class="project-card" target="_blank">
+        <!-- <a href="./HTML_FORM/index.html" class="project-card">
             <span class="card-number">04</span>
             <h2>HTML Form</h2>
             <p>
@@ -85,7 +100,7 @@
         </a> -->
 
         <!-- Project 5 = [ HTML_SELECT_BAR ] -->
-        <!-- <a href="./HTML_SELECT_BAR/index.html" class="project-card" target="_blank">
+        <!-- <a href="./HTML_SELECT_BAR/index.html" class="project-card">
             <span class="card-number">05</span>
             <h2>HTML Select Bar</h2>
             <p>
@@ -96,7 +111,7 @@
         </a> -->
 
         <!-- Project 6 = [ HTML_TEXT ] -->
-        <!-- <a href="./HTML_TEXT/index.html" class="project-card" target="_blank">
+        <!-- <a href="./HTML_TEXT/index.html" class="project-card">
             <span class="card-number">06</span>
             <h2>HTML Text</h2>
             <p>
@@ -108,14 +123,13 @@
 
         <!-- Add future projects here simply by duplicating a block like below: -->
         <!-- 
-        <a href="./PROJECT_7/index.html" class="project-card" target="_blank">
+        <a href="./PROJECT_7/index.html" class="project-card">
             <span class="card-number">07</span>
             <h2>E-COMMERCE</h2>
             <p>Practice semantic layout & product tables.</p>
         </a> 
         -->
     </main>
-
 
     <!-- Vercel Web Analytics -->
     <script>
@@ -147,6 +161,48 @@
                 \x3C/script>
             \x3C/body>
         `);
+    </script>
+
+    <!-- SPA Logic & Dynamic Auto-Height adjustment -->
+    <script>
+        const mainContainer = document.getElementById('app-main');
+        const initialGridHTML = mainContainer.innerHTML;
+
+        function attachCardListeners() {
+            const cards = mainContainer.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectUrl = card.getAttribute('href');
+                    loadProject(projectUrl);
+                });
+            });
+        }
+
+        function loadProject(url) {
+            mainContainer.className = "spa-container";
+            mainContainer.innerHTML = `
+                <button class="back-btn" onclick="loadGrid()">← Back to Projects</button>
+                <iframe src="${url}" class="project-iframe" title="Project View" scrolling="no" onload="autoResizeIframe(this)"></iframe>
+            `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function autoResizeIframe(iframe) {
+            try {
+                iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
+            } catch (err) {
+                iframe.style.height = '100vh';
+            }
+        }
+
+        function loadGrid() {
+            mainContainer.className = "projects-grid";
+            mainContainer.innerHTML = initialGridHTML;
+            attachCardListeners();
+        }
+
+        attachCardListeners();
     </script>
 
 </body>

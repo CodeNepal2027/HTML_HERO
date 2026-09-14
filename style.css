@@ -36,7 +36,7 @@ body {
     background-color: var(--bg-main);
     color: var(--text-primary);
     min-height: 100dvh;
-    padding: 48px 24px;
+    padding: 100px 24px 48px 24px; /* Added top padding so content doesn't hide under fixed navbar */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,44 +44,159 @@ body {
 }
 
 /* ==========================================================================
-   Header Styling
+   Modern Glassmorphism Navbar
    ========================================================================== */
-header {
-    text-align: center;
-    margin-bottom: 48px;
-    max-width: 600px;
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-h1 {
+.navbar-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.brand-badge {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+.brand-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: var(--transition-standard);
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.nav-btn {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.nav-link.nav-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   Hero Header Section
+   ========================================================================== */
+.hero-header {
+    text-align: center;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-header h1 {
     font-size: 2.5rem;
     font-weight: 800;
+    letter-spacing: -0.03em;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-    background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
-header h6 {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent-blue);
-    /* letter-spacing: 2px; */
-    margin-bottom: 12px;
-    text-transform: uppercase;
-}
-
-.subtitle {
-    font-size: 1.02rem;
+.hero-header .subtitle {
+    font-size: 1rem;
+    font-weight: 400;
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 12px;
 }
 
-header p b {
-    color: var(--text-primary);
+.hero-header .url-tag {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background-color: #e2e8f0;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-top: 6px;
+}
+
+/* SPA Layout & Seamless Iframe Styles */
+.spa-container {
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.back-btn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-standard);
+}
+
+.back-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-iframe {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: height 0.2s ease;
 }
 
 /* ==========================================================================
@@ -166,11 +281,15 @@ header p b {
    ========================================================================== */
 @media (max-width: 640px) {
     body {
-        padding: 32px 16px;
+        padding: 90px 16px 32px 16px;
     }
 
-    h1 {
+    .hero-header h1 {
         font-size: 2rem;
+    }
+
+    .navbar-container {
+        padding: 12px 16px;
     }
 
     .projects-grid {
