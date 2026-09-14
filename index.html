@@ -162,171 +162,171 @@
         `);
     </script>
 
-<!-- SPA Logic: iframe-aware back navigation + live auto-height -->
-<script>
-    const mainContainer = document.getElementById('app-main');
-    const initialGridHTML = mainContainer.innerHTML;
+    <!-- SPA Logic: iframe-aware back navigation + live auto-height -->
+    <script>
+        const mainContainer = document.getElementById('app-main');
+        const initialGridHTML = mainContainer.innerHTML;
 
-    let iframeEntryUrl = null;
-    let heightObserver = null;     // MutationObserver instance
-    let heightInterval = null;     // Fallback poller
+        let iframeEntryUrl = null;
+        let heightObserver = null;     // MutationObserver instance
+        let heightInterval = null;     // Fallback poller
 
-    function attachCardListeners() {
-        const cards = mainContainer.querySelectorAll('.project-card');
-        cards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                e.preventDefault();
-                loadProject(card.getAttribute('href'));
+        function attachCardListeners() {
+            const cards = mainContainer.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadProject(card.getAttribute('href'));
+                });
             });
-        });
-    }
-
-    function loadProject(url) {
-        iframeEntryUrl = url;
-        stopHeightTracking();
-
-        mainContainer.className = "spa-container";
-        mainContainer.innerHTML = `
-            <button class="back-btn" onclick="goBack()">
-                <i class="bi bi-arrow-left"></i> Back
-            </button>
-            <iframe src="${url}" class="project-iframe" title="Project View"
-                    scrolling="no"
-                    onload="onIframeLoad(this)"></iframe>
-        `;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function onIframeLoad(iframe) {
-        autoResizeIframe(iframe);
-        startHeightTracking(iframe);
-    }
-
-    /**
-     * Continuously keep the iframe height matched to its inner document.
-     * Uses MutationObserver (instant) + setInterval (safety net every 500ms).
-     */
-    function startHeightTracking(iframe) {
-        stopHeightTracking();
-
-        try {
-            const innerDoc = iframe.contentWindow.document;
-
-            // 1) Observe any DOM change inside the iframe
-            heightObserver = new MutationObserver(() => {
-                autoResizeIframe(iframe);
-            });
-            heightObserver.observe(innerDoc.body || innerDoc.documentElement, {
-                childList: true,
-                subtree: true,
-                attributes: true,
-                characterData: true
-            });
-
-            // 2) Poll as a fallback (some navigations replace the whole document,
-            //    which breaks the observer — the interval reattaches automatically)
-            heightInterval = setInterval(() => {
-                // If the inner document has been swapped (new navigation),
-                // reattach the observer to the new body.
-                try {
-                    const currentDoc = iframe.contentWindow.document;
-                    if (heightObserver && currentDoc.body) {
-                        // Disconnect & reconnect to the new body
-                        heightObserver.disconnect();
-                        heightObserver.observe(currentDoc.body, {
-                            childList: true,
-                            subtree: true,
-                            attributes: true,
-                            characterData: true
-                        });
-                    }
-                } catch (_) { /* ignore */ }
-
-                autoResizeIframe(iframe);
-            }, 500);
-        } catch (err) {
-            console.warn("Height tracking unavailable:", err);
         }
-    }
 
-    function stopHeightTracking() {
-        if (heightObserver) {
-            heightObserver.disconnect();
-            heightObserver = null;
+        function loadProject(url) {
+            iframeEntryUrl = url;
+            stopHeightTracking();
+
+            mainContainer.className = "spa-container";
+            mainContainer.innerHTML = `
+                <button class="back-btn" onclick="goBack()">
+                    <i class="bi bi-arrow-left"></i> Back
+                </button>
+                <iframe src="${url}" class="project-iframe" title="Project View"
+                        scrolling="no"
+                        onload="onIframeLoad(this)"></iframe>
+            `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        if (heightInterval) {
-            clearInterval(heightInterval);
-            heightInterval = null;
+
+        function onIframeLoad(iframe) {
+            autoResizeIframe(iframe);
+            startHeightTracking(iframe);
         }
-    }
 
-    function goBack() {
-        const iframe = mainContainer.querySelector('.project-iframe');
+        /**
+        * Continuously keep the iframe height matched to its inner document.
+        * Uses MutationObserver (instant) + setInterval (safety net every 500ms).
+        */
+        function startHeightTracking(iframe) {
+            stopHeightTracking();
 
-        if (iframe && iframe.contentWindow) {
             try {
-                const inner = iframe.contentWindow;
-                const innerLoc = inner.location.href;
-                const innerHist = inner.history;
+                const innerDoc = iframe.contentWindow.document;
 
-                const entryHref = new URL(iframeEntryUrl, window.location.href).href;
-                const onEntryPage = isSamePage(innerLoc, entryHref);
+                // 1) Observe any DOM change inside the iframe
+                heightObserver = new MutationObserver(() => {
+                    autoResizeIframe(iframe);
+                });
+                heightObserver.observe(innerDoc.body || innerDoc.documentElement, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    characterData: true
+                });
 
-                if (!onEntryPage && innerHist.length > 1) {
-                    inner.history.back();
-                    // The interval inside startHeightTracking will pick up the new height
-                    setTimeout(() => autoResizeIframe(iframe), 250);
-                    return;
-                }
+                // 2) Poll as a fallback (some navigations replace the whole document,
+                //    which breaks the observer — the interval reattaches automatically)
+                heightInterval = setInterval(() => {
+                    // If the inner document has been swapped (new navigation),
+                    // reattach the observer to the new body.
+                    try {
+                        const currentDoc = iframe.contentWindow.document;
+                        if (heightObserver && currentDoc.body) {
+                            // Disconnect & reconnect to the new body
+                            heightObserver.disconnect();
+                            heightObserver.observe(currentDoc.body, {
+                                childList: true,
+                                subtree: true,
+                                attributes: true,
+                                characterData: true
+                            });
+                        }
+                    } catch (_) { /* ignore */ }
+
+                    autoResizeIframe(iframe);
+                }, 500);
             } catch (err) {
-                console.warn("Cannot read iframe history:", err);
+                console.warn("Height tracking unavailable:", err);
             }
         }
 
-        loadGrid();
-    }
-
-    function isSamePage(a, b) {
-        try {
-            const ua = new URL(a);
-            const ub = new URL(b);
-            let pa = ua.pathname.replace(/\/index\.html$/, "/");
-            let pb = ub.pathname.replace(/\/index\.html$/, "/");
-            return pa === pb;
-        } catch {
-            return a === b;
+        function stopHeightTracking() {
+            if (heightObserver) {
+                heightObserver.disconnect();
+                heightObserver = null;
+            }
+            if (heightInterval) {
+                clearInterval(heightInterval);
+                heightInterval = null;
+            }
         }
-    }
 
-    function autoResizeIframe(iframe) {
-        try {
-            const doc = iframe.contentWindow.document;
-            const h = Math.max(
-                doc.body ? doc.body.scrollHeight : 0,
-                doc.documentElement ? doc.documentElement.scrollHeight : 0
-            );
-            // +24px buffer prevents last-row clipping from rounding / borders / shadows
-            if (h > 0) iframe.style.height = (h + 24) + 'px';
-        } catch {
-            iframe.style.height = '100dvh';
+        function goBack() {
+            const iframe = mainContainer.querySelector('.project-iframe');
+
+            if (iframe && iframe.contentWindow) {
+                try {
+                    const inner = iframe.contentWindow;
+                    const innerLoc = inner.location.href;
+                    const innerHist = inner.history;
+
+                    const entryHref = new URL(iframeEntryUrl, window.location.href).href;
+                    const onEntryPage = isSamePage(innerLoc, entryHref);
+
+                    if (!onEntryPage && innerHist.length > 1) {
+                        inner.history.back();
+                        // The interval inside startHeightTracking will pick up the new height
+                        setTimeout(() => autoResizeIframe(iframe), 250);
+                        return;
+                    }
+                } catch (err) {
+                    console.warn("Cannot read iframe history:", err);
+                }
+            }
+
+            loadGrid();
         }
-    }
 
-    function loadGrid() {
-        stopHeightTracking();
-        iframeEntryUrl = null;
-        mainContainer.className = "projects-grid";
-        mainContainer.innerHTML = initialGridHTML;
+        function isSamePage(a, b) {
+            try {
+                const ua = new URL(a);
+                const ub = new URL(b);
+                let pa = ua.pathname.replace(/\/index\.html$/, "/");
+                let pb = ub.pathname.replace(/\/index\.html$/, "/");
+                return pa === pb;
+            } catch {
+                return a === b;
+            }
+        }
+
+        function autoResizeIframe(iframe) {
+            try {
+                const doc = iframe.contentWindow.document;
+                const h = Math.max(
+                    doc.body ? doc.body.scrollHeight : 0,
+                    doc.documentElement ? doc.documentElement.scrollHeight : 0
+                );
+                // +24px buffer prevents last-row clipping from rounding / borders / shadows
+                if (h > 0) iframe.style.height = (h + 24) + 'px';
+            } catch {
+                iframe.style.height = '100dvh';
+            }
+        }
+
+        function loadGrid() {
+            stopHeightTracking();
+            iframeEntryUrl = null;
+            mainContainer.className = "projects-grid";
+            mainContainer.innerHTML = initialGridHTML;
+            attachCardListeners();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         attachCardListeners();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
 
-    attachCardListeners();
-
-    // Footer year
-    const yearEl = document.getElementById('footer-year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-</script>
+        // Footer year
+        const yearEl = document.getElementById('footer-year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>

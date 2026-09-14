@@ -423,7 +423,7 @@ body::-webkit-scrollbar {
 /* ==========================================================================
     Mobile Optimization
     ========================================================================== */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     body {
         padding: 90px 16px 32px 16px;
     }
@@ -459,11 +459,8 @@ body::-webkit-scrollbar {
         gap: 4px;
     }
 
-    .nav-link {
-        font-size: 0.82rem;
-        padding: 6px 9px;
-        gap: 4px;
-        border-radius: 6px;
+    .nav-link .nav-text {
+        display: none;
     }
 
     .nav-link i {
