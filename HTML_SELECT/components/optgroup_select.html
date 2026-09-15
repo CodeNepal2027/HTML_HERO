@@ -9,20 +9,20 @@
 </head>
 <body>
 
-    <h2>Grouped Select Dropdown (With selected & disabled optgroup)</h2>
+    <h2>Grouped Select Dropdown (With selected &amp; disabled optgroup)</h2>
 
     <form>
         <label for="subject">Select Your Subject:</label>
         <select name="subject" id="subject">
             <!-- Pre-selected option -->
             <option value="" disabled selected>-- Choose Subject --</option>
-            
+
             <optgroup label="Sciences">
                 <option value="physics">Physics</option>
                 <option value="chemistry">Chemistry</option>
                 <option value="biology">Biology</option>
             </optgroup>
-            
+
             <!-- Entire optgroup disabled -->
             <optgroup label="Humanities (Not available this semester)" disabled>
                 <option value="history">History</option>
@@ -36,13 +36,184 @@
         console.group("📁 Optgroup Select Example");
         console.log(`
             \x3Cselect name="subject">
-                \x3Coption value="" selected disabled>--Choose your group subject--\x3C/option>
+                \x3Coption value="" selected disabled>-- Choose Subject --\x3C/option>
                 \x3Coptgroup label="Sciences">
+                    \x3Coption value="physics">Physics\x3C/option>
                     \x3Coption value="chemistry">Chemistry\x3C/option>
+                    \x3Coption value="biology">Biology\x3C/option>
                 \x3C/optgroup>
-                \x3Coptgroup label="Humanities" disabled>
+                \x3Coptgroup label="Humanities (Not available this semester)" disabled>
                     \x3Coption value="history">History\x3C/option>
-                    \x3Coption value="population">Populationy\x3C/option>
+                    \x3Coption value="geography">Geography\x3C/option>
+                    \x3Coption value="civics">Civics\x3C/option>
+                \x3C/optgroup>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Grouped Select (Countries by Continent)</h2>
+
+    <form>
+        <label for="continent">Select Country by Continent:</label>
+        <select name="continent" id="continent">
+            <option value="" disabled selected>-- Pick a country --</option>
+
+            <optgroup label="Asia">
+                <option value="nepal">Nepal</option>
+                <option value="india">India</option>
+                <option value="china">China</option>
+                <option value="japan">Japan</option>
+            </optgroup>
+
+            <optgroup label="Europe">
+                <option value="uk">United Kingdom</option>
+                <option value="france">France</option>
+                <option value="germany">Germany</option>
+                <option value="italy">Italy</option>
+            </optgroup>
+
+            <optgroup label="Americas">
+                <option value="usa">United States</option>
+                <option value="canada">Canada</option>
+                <option value="brazil">Brazil</option>
+                <option value="mexico">Mexico</option>
+            </optgroup>
+        </select>
+    </form>
+
+    <script>
+        console.group("🌍 Grouped Select (by Continent)");
+        console.log(`
+            \x3Cselect name="continent">
+                \x3Coption value="" disabled selected>-- Pick a country --\x3C/option>
+                \x3Coptgroup label="Asia">
+                    \x3Coption value="nepal">Nepal\x3C/option>
+                    \x3Coption value="india">India\x3C/option>
+                \x3C/optgroup>
+                \x3Coptgroup label="Europe">
+                    \x3Coption value="uk">United Kingdom\x3C/option>
+                \x3C/optgroup>
+                \x3Coptgroup label="Americas">
+                    \x3Coption value="usa">United States\x3C/option>
+                \x3C/optgroup>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Grouped Select with a Pre-Selected Option</h2>
+
+    <form>
+        <label for="course">Select Course:</label>
+        <select name="course" id="course">
+            <optgroup label="Beginner">
+                <option value="html-basic">HTML Basics</option>
+                <option value="css-intro" selected>CSS Intro</option>
+            </optgroup>
+            <optgroup label="Intermediate">
+                <option value="js-101">JavaScript 101</option>
+                <option value="responsive">Responsive Design</option>
+            </optgroup>
+            <optgroup label="Advanced">
+                <option value="react">React Fundamentals</option>
+                <option value="node">Node.js Essentials</option>
+            </optgroup>
+        </select>
+    </form>
+
+    <script>
+        console.group("🎓 Grouped Select (Pre-selected)");
+        console.log(`
+            \x3Cselect name="course">
+                \x3Coptgroup label="Beginner">
+                    \x3Coption value="html-basic">HTML Basics\x3C/option>
+                    \x3Coption value="css-intro" selected>CSS Intro\x3C/option>
+                \x3C/optgroup>
+                \x3Coptgroup label="Intermediate">
+                    \x3Coption value="js-101">JavaScript 101\x3C/option>
+                \x3C/optgroup>
+                \x3Coptgroup label="Advanced">
+                    \x3Coption value="react">React Fundamentals\x3C/option>
+                \x3C/optgroup>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Grouped Select with One Disabled Option Inside</h2>
+
+    <form>
+        <label for="days">Select Appointment Day:</label>
+        <select name="days" id="days">
+            <option value="" disabled selected>-- Choose a day --</option>
+            <optgroup label="Weekdays">
+                <option value="mon">Monday</option>
+                <option value="tue">Tuesday</option>
+                <option value="wed">Wednesday</option>
+                <option value="thu">Thursday</option>
+                <option value="fri" disabled>Friday (Fully Booked)</option>
+            </optgroup>
+            <optgroup label="Weekend">
+                <option value="sat">Saturday</option>
+                <option value="sun" disabled>Sunday (Closed)</option>
+            </optgroup>
+        </select>
+    </form>
+
+    <script>
+        console.group("📅 Grouped Select (with disabled option inside)");
+        console.log(`
+            \x3Coptgroup label="Weekdays">
+                \x3Coption value="mon">Monday\x3C/option>
+                \x3Coption value="fri" disabled>Friday (Fully Booked)\x3C/option>
+            \x3C/optgroup>
+            \x3Coptgroup label="Weekend">
+                \x3Coption value="sat">Saturday\x3C/option>
+                \x3Coption value="sun" disabled>Sunday (Closed)\x3C/option>
+            \x3C/optgroup>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Grouped Multi-Select (optgroup + multiple)</h2>
+
+    <form>
+        <label for="teams">Pick Teams (Hold Ctrl / Cmd):</label>
+        <br><br>
+        <select name="teams" id="teams" multiple size="6">
+            <optgroup label="Football">
+                <option value="barca" selected>FC Barcelona</option>
+                <option value="real">Real Madrid</option>
+                <option value="bayern">Bayern Munich</option>
+            </optgroup>
+            <optgroup label="Cricket">
+                <option value="india-c">India</option>
+                <option value="nepal-c" selected>Nepal</option>
+                <option value="aus-c" disabled>Australia (Suspended)</option>
+            </optgroup>
+        </select>
+    </form>
+
+    <script>
+        console.group("🏆 Grouped Multi-Select");
+        console.log(`
+            \x3Cselect name="teams" multiple size="6">
+                \x3Coptgroup label="Football">
+                    \x3Coption value="barca" selected>FC Barcelona\x3C/option>
+                    \x3Coption value="real">Real Madrid\x3C/option>
+                \x3C/optgroup>
+                \x3Coptgroup label="Cricket">
+                    \x3Coption value="nepal-c" selected>Nepal\x3C/option>
+                    \x3Coption value="aus-c" disabled>Australia (Suspended)\x3C/option>
                 \x3C/optgroup>
             \x3C/select>
         `);
