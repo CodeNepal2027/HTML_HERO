@@ -45,6 +45,121 @@
                 \x3C!-- Merges 2 rows vertically -->
                 \x3Ctd rowspan="2">Monday\x3C/td>
                 \x3Ctd>09:00 AM - 10:00 AM\x3C/td>
+                \x3Ctd>English Literature\x3C/td>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Ctd>10:00 AM - 11:00 AM\x3C/td>
+                \x3Ctd>Physics Lab\x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Movie Showtimes (rowspan Practice)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Cinema Hall</th>
+            <th>Movie</th>
+            <th>Show Time</th>
+        </tr>
+        <tr>
+            <td rowspan="3"><strong>Hall A</strong></td>
+            <td>Interstellar</td>
+            <td>10:00 AM</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Inception</td>
+            <td>01:30 PM</td>
+        </tr>
+        <tr>
+            <td>06:00 PM</td>
+        </tr>
+        <tr>
+            <td rowspan="2"><strong>Hall B</strong></td>
+            <td>The Dark Knight</td>
+            <td>11:00 AM</td>
+        </tr>
+        <tr>
+            <td>Dunkirk</td>
+            <td>04:00 PM</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🎬 Movie Showtimes (rowspan across 3 rows)");
+        console.log(`
+            \x3Ctr>
+                \x3Ctd rowspan="3">Hall A\x3C/td>
+                \x3Ctd>Interstellar\x3C/td>
+                \x3Ctd>10:00 AM\x3C/td>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Ctd rowspan="2">Inception\x3C/td>
+                \x3Ctd>01:30 PM\x3C/td>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Ctd>06:00 PM\x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Hotel Room Booking (rowspan Practice)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Guest Name</th>
+            <th>Room Type</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+        </tr>
+        <tr>
+            <td rowspan="2"><strong>Mr. Smith</strong></td>
+            <td>Deluxe</td>
+            <td>2024-06-01</td>
+            <td>2024-06-03</td>
+        </tr>
+        <tr>
+            <td>Suite</td>
+            <td>2024-06-03</td>
+            <td>2024-06-05</td>
+        </tr>
+        <tr>
+            <td rowspan="3"><strong>Ms. Lee</strong></td>
+            <td>Standard</td>
+            <td>2024-06-02</td>
+            <td>2024-06-04</td>
+        </tr>
+        <tr>
+            <td>Deluxe</td>
+            <td>2024-06-04</td>
+            <td>2024-06-06</td>
+        </tr>
+        <tr>
+            <td>Suite</td>
+            <td>2024-06-06</td>
+            <td>2024-06-08</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🏨 Hotel Booking (rowspan across multiple bookings)");
+        console.log(`
+            \x3Ctr>
+                \x3Ctd rowspan="2">Mr. Smith\x3C/td>
+                \x3Ctd>Deluxe\x3C/td>
+                \x3Ctd>2024-06-01\x3C/td>
+                \x3Ctd>2024-06-03\x3C/td>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Ctd>Suite\x3C/td>
+                \x3Ctd>2024-06-03\x3C/td>
+                \x3Ctd>2024-06-05\x3C/td>
             \x3C/tr>
         `);
         console.groupEnd();
