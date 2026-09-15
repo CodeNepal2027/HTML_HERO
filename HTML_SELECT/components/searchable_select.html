@@ -65,5 +65,154 @@
         console.groupEnd();
     </script>
 
+    <hr>
+
+    <h2>Simple Datalist (Color Picker)</h2>
+
+    <form>
+        <label for="color">Favorite Color:</label><br>
+        <input list="color-list" id="color" name="color" placeholder="Type a color...">
+        <datalist id="color-list">
+            <option value="Red">
+            <option value="Green">
+            <option value="Blue">
+            <option value="Yellow">
+            <option value="Orange">
+            <option value="Purple">
+        </datalist>
+    </form>
+
+    <script>
+        console.group("🎨 Simple Datalist (Colors)");
+        console.log(`
+            \x3Cinput list="color-list" name="color" placeholder="Type a color...">
+            \x3Cdatalist id="color-list">
+                \x3Coption value="Red">
+                \x3Coption value="Green">
+                \x3Coption value="Blue">
+            \x3C/datalist>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Datalist for Numbers (Suggested Range)</h2>
+
+    <form>
+        <label for="age">Age (Datalist suggestions):</label><br>
+        <input list="age-list" id="age" name="age" type="number" placeholder="Pick or type...">
+        <datalist id="age-list">
+            <option value="10">
+            <option value="15">
+            <option value="18">
+            <option value="21">
+            <option value="30">
+            <option value="40">
+            <option value="60">
+        </datalist>
+    </form>
+
+    <script>
+        console.group("🔢 Datalist for Numbers");
+        console.log(`
+            \x3Cinput list="age-list" type="number" placeholder="Pick or type...">
+            \x3Cdatalist id="age-list">
+                \x3Coption value="10">
+                \x3Coption value="18">
+                \x3Coption value="30">
+            \x3C/datalist>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Datalist for Email Domains</h2>
+
+    <form>
+        <label for="email2">Email (with @domain suggestions):</label><br>
+        <input list="domains" id="email2" name="email2" type="email" placeholder="you@example.com">
+        <datalist id="domains">
+            <option value="@gmail.com">
+            <option value="@yahoo.com">
+            <option value="@outlook.com">
+            <option value="@protonmail.com">
+        </datalist>
+    </form>
+
+    <script>
+        console.group("📧 Datalist for Email Domains");
+        console.log(`
+            \x3Cinput list="domains" type="email" placeholder="you@example.com">
+            \x3Cdatalist id="domains">
+                \x3Coption value="@gmail.com">
+                \x3Coption value="@yahoo.com">
+                \x3Coption value="@outlook.com">
+            \x3C/datalist>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Datalist with Labels (Value + Description)</h2>
+
+    <form>
+        <label for="lang">Programming Language (code + name):</label><br>
+        <input list="lang-list" id="lang" name="lang" placeholder="Start typing...">
+        <datalist id="lang-list">
+            <option value="html" label="HyperText Markup Language"></option>
+            <option value="css" label="Cascading Style Sheets"></option>
+            <option value="js" label="JavaScript"></option>
+            <option value="py" label="Python"></option>
+            <option value="rb" label="Ruby"></option>
+        </datalist>
+    </form>
+
+    <script>
+        console.group("💻 Datalist with Labels");
+        console.log(`
+            \x3Cinput list="lang-list" placeholder="Start typing...">
+            \x3Cdatalist id="lang-list">
+                \x3Coption value="html" label="HyperText Markup Language">\x3C/option>
+                \x3Coption value="css" label="Cascading Style Sheets">\x3C/option>
+                \x3Coption value="js" label="JavaScript">\x3C/option>
+            \x3C/datalist>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Datalist with Disabled Option</h2>
+
+    <form>
+        <label for="room">Room Type (some unavailable):</label><br>
+        <input list="rooms" id="room" name="room" placeholder="Pick or type...">
+        <datalist id="rooms">
+            <option value="Single">
+            <option value="Double">
+            <option value="Suite" disabled>
+            <option value="Deluxe">
+            <option value="Presidential" disabled>
+        </datalist>
+    </form>
+
+    <script>
+        console.group("🏨 Datalist with Disabled Options");
+        console.log(`
+            \x3Cinput list="rooms" placeholder="Pick or type...">
+            \x3Cdatalist id="rooms">
+                \x3Coption value="Single">
+                \x3Coption value="Double">
+                \x3Coption value="Suite" disabled>
+                \x3Coption value="Deluxe">
+                \x3Coption value="Presidential" disabled>
+            \x3C/datalist>
+        `);
+        console.groupEnd();
+    </script>
+
 </body>
 </html>

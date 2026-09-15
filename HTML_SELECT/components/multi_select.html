@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h2>Multi-Select Box (With selected & disabled options) - [(Hold Ctrl / Cmd to pick multiple)]</h2>
+    <h2>Multi-Select Box (With selected &amp; disabled options) - [(Hold Ctrl / Cmd to pick multiple)]</h2>
 
     <form>
         <label for="hobbies">Choose Your Hobbies:</label>
@@ -17,7 +17,7 @@
         <select name="hobbies" id="hobbies" multiple size="5">
             <!-- Multiple selected items by default -->
             <option value="reading" selected>Reading Books</option>
-            <option value="coding" selected>Coding & Web Dev</option>
+            <option value="coding" selected>Coding &amp; Web Dev</option>
             <option value="sports">Playing Sports</option>
             <!-- Disabled option -->
             <option value="music" disabled>Listening to Music (Maintenance)</option>
@@ -31,8 +31,103 @@
             \x3Cselect name="hobbies" multiple size="5">
                 \x3Coption value="reading" selected>Reading Books\x3C/option>
                 \x3Coption value="coding" selected>Coding & Web Dev\x3C/option>
+                \x3Coption value="sports">Playing Sports\x3C/option>
                 \x3Coption value="music" disabled>Listening to Music\x3C/option>
-                \x3Coption value="coding" >Video Games\x3C/option>
+                \x3Coption value="gaming">Video Games\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Multi-Select Compact (size="3")</h2>
+
+    <form>
+        <label for="skills">Pick Skills (Compact):</label>
+        <br><br>
+        <select name="skills" id="skills" multiple size="3">
+            <option value="html" selected>HTML</option>
+            <option value="css" selected>CSS</option>
+            <option value="js">JavaScript</option>
+            <option value="py">Python</option>
+            <option value="sql">SQL</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("📦 Multi-Select (size=3)");
+        console.log(`
+            \x3Cselect name="skills" multiple size="3">
+                \x3Coption value="html" selected>HTML\x3C/option>
+                \x3Coption value="css" selected>CSS\x3C/option>
+                \x3Coption value="js">JavaScript\x3C/option>
+                \x3Coption value="py">Python\x3C/option>
+                \x3Coption value="sql">SQL\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Multi-Select Tall List (size="8")</h2>
+
+    <form>
+        <label for="cities">Pick Cities You've Visited:</label>
+        <br><br>
+        <select name="cities" id="cities" multiple size="8">
+            <option value="kathmandu" selected>Kathmandu</option>
+            <option value="pokhara">Pokhara</option>
+            <option value="lalitpur">Lalitpur</option>
+            <option value="bhaktapur">Bhaktapur</option>
+            <option value="biratnagar">Biratnagar</option>
+            <option value="birgunj">Birgunj</option>
+            <option value="butwal">Butwal</option>
+            <option value="dharan" disabled>Dharan (Closed)</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("🏙️ Multi-Select (size=8)");
+        console.log(`
+            \x3Cselect name="cities" multiple size="8">
+                \x3Coption value="kathmandu" selected>Kathmandu\x3C/option>
+                \x3Coption value="pokhara">Pokhara\x3C/option>
+                \x3Coption value="lalitpur">Lalitpur\x3C/option>
+                \x3Coption value="bhaktapur">Bhaktapur\x3C/option>
+                \x3Coption value="biratnagar">Biratnagar\x3C/option>
+                \x3Coption value="birgunj">Birgunj\x3C/option>
+                \x3Coption value="butwal">Butwal\x3C/option>
+                \x3Coption value="dharan" disabled>Dharan (Closed)\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Multi-Select with All Options Disabled</h2>
+
+    <form>
+        <label for="lockedmulti">Locked Multi-Select (All Disabled):</label>
+        <br><br>
+        <select name="lockedmulti" id="lockedmulti" multiple size="4" disabled>
+            <option value="a">Option A</option>
+            <option value="b">Option B</option>
+            <option value="c">Option C</option>
+            <option value="d">Option D</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("🚫 Multi-Select Fully Disabled");
+        console.log(`
+            \x3Cselect name="lockedmulti" multiple size="4" disabled>
+                \x3Coption value="a">Option A\x3C/option>
+                \x3Coption value="b">Option B\x3C/option>
+                \x3Coption value="c">Option C\x3C/option>
+                \x3Coption value="d">Option D\x3C/option>
             \x3C/select>
         `);
         console.groupEnd();

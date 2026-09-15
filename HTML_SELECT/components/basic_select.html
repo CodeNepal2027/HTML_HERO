@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h2>Basic Select Dropdown (With selected & disabled)</h2>
+    <h2>Basic Select Dropdown (With selected &amp; disabled)</h2>
 
     <form>
         <label for="country">Select Your Country:</label>
@@ -32,6 +32,176 @@
                 \x3Coption value="" disabled selected>-- Choose a country --\x3C/option>
                 \x3Coption value="india">India\x3C/option>
                 \x3Coption value="uk" disabled>United Kingdom (Unavailable)\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Select with size="1" (Default Dropdown)</h2>
+
+    <form>
+        <label for="fruit1">Pick a Fruit:</label>
+        <select name="fruit1" id="fruit1" size="1">
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="cherry">Cherry</option>
+            <option value="mango">Mango</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("🍎 Select with size=1");
+        console.log(`
+            \x3Cselect name="fruit1" size="1">
+                \x3Coption value="apple">Apple\x3C/option>
+                \x3Coption value="banana">Banana\x3C/option>
+                \x3Coption value="cherry">Cherry\x3C/option>
+                \x3Coption value="mango">Mango\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Select with size="4" (List Box)</h2>
+
+    <form>
+        <label for="fruit2">Pick a Fruit (List View):</label>
+        <br>
+        <select name="fruit2" id="fruit2" size="4">
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="cherry">Cherry</option>
+            <option value="mango">Mango</option>
+            <option value="orange">Orange</option>
+            <option value="papaya">Papaya</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("📜 Select with size=4");
+        console.log(`
+            \x3Cselect name="fruit2" size="4">
+                \x3Coption value="apple">Apple\x3C/option>
+                \x3Coption value="banana">Banana\x3C/option>
+                \x3Coption value="cherry">Cherry\x3C/option>
+                \x3Coption value="mango">Mango\x3C/option>
+                \x3Coption value="orange">Orange\x3C/option>
+                \x3Coption value="papaya">Papaya\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Required Select (Form Validation)</h2>
+
+    <form action="#" method="get">
+        <label for="gender">Gender (required):</label>
+        <select name="gender" id="gender" required>
+            <option value="">-- Select --</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        console.group("✅ Required Select");
+        console.log(`
+            \x3Cselect name="gender" required>
+                \x3Coption value="">-- Select --\x3C/option>
+                \x3Coption value="male">Male\x3C/option>
+                \x3Coption value="female">Female\x3C/option>
+                \x3Coption value="other">Other\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Disabled Select (Entire Control Locked)</h2>
+
+    <form>
+        <label for="locked">Account Type (Locked):</label>
+        <select name="locked" id="locked" disabled>
+            <option value="free">Free</option>
+            <option value="pro" selected>Pro</option>
+            <option value="team">Team</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("🔒 Disabled Select");
+        console.log(`
+            \x3Cselect name="locked" disabled>
+                \x3Coption value="free">Free\x3C/option>
+                \x3Coption value="pro" selected>Pro\x3C/option>
+                \x3Coption value="team">Team\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Select Linked via form Attribute (Outside Form)</h2>
+
+    <form id="signup" action="#" method="get">
+        <label for="user">Username:</label>
+        <input type="text" id="user" name="user" placeholder="john_doe">
+        <br><br>
+    </form>
+
+    <label for="plan">Plan (linked via form attribute):</label>
+    <select name="plan" id="plan" form="signup">
+        <option value="basic">Basic</option>
+        <option value="standard" selected>Standard</option>
+        <option value="premium">Premium</option>
+    </select>
+
+    <script>
+        console.group("🔗 Select linked via form attribute");
+        console.log(`
+            \x3Cform id="signup"> ... \x3C/form>
+            \x3Cselect name="plan" form="signup">
+                \x3Coption value="basic">Basic\x3C/option>
+                \x3Coption value="standard" selected>Standard\x3C/option>
+                \x3Coption value="premium">Premium\x3C/option>
+            \x3C/select>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Select with Autofocus</h2>
+
+    <form>
+        <label for="search">Search Category:</label>
+        <select name="search" id="search" autofocus>
+            <option value="">-- Pick --</option>
+            <option value="books">Books</option>
+            <option value="movies">Movies</option>
+            <option value="music">Music</option>
+        </select>
+    </form>
+
+    <script>
+        console.group("🎯 Select with autofocus");
+        console.log(`
+            \x3Cselect name="search" autofocus>
+                \x3Coption value="">-- Pick --\x3C/option>
+                \x3Coption value="books">Books\x3C/option>
+                \x3Coption value="movies">Movies\x3C/option>
+                \x3Coption value="music">Music\x3C/option>
             \x3C/select>
         `);
         console.groupEnd();
