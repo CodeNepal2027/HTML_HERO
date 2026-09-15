@@ -5,24 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- OPTECH Favicon --> 
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <title> HTML HERO || HTML Select Bar Practice</title>
+    <title> HTML HERO || HTML List Practice</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: transparent;
             display: flex;
             flex-direction: column;
             align-items: center;
-             
             padding: 20px;
         }
-
         h1 {
             color: #1e293b;
             margin-bottom: 25px;
@@ -30,7 +23,7 @@
             text-align: center;
         }
 
-        /* Container for navigation buttons */
+        /* Container for horizontal/vertical grid layout */
         .button-container {
             display: flex;
             flex-direction: column;
@@ -64,39 +57,39 @@
         }
 
         /* Individual Button Colors */
-        .btn-basic {
+        .btn-description {
             background-color: #3b82f6; /* Blue */
         }
 
-        .btn-multi {
+        .btn-unordered {
             background-color: #10b981; /* Emerald Green */
         }
 
-        .btn-optgroup {
+        .btn-ordered {
             background-color: #f59e0b; /* Amber/Orange */
         }
 
-        .btn-searchable {
+        .btn-nested {
             background-color: #8b5cf6; /* Purple */
         }
     </style>
 </head>
 <body>
 
-    <h1>HTML Select Practice Modules</h1>
+    <h1>HTML List Practice Modules</h1>
 
     <div class="button-container">
-        <!-- Basic Select Section -->
-        <a href="./components/basic_select.html" rel="noopener noreferrer" class="btn btn-basic">Basic Select</a>
+        <!-- Description Section -->
+        <a href="./components/description_list.html" class="btn btn-description">Description List</a>
 
-        <!-- Multi Select Section -->
-        <a href="./components/multi_select.html" rel="noopener noreferrer" class="btn btn-multi">Multi Select</a>
+        <!-- Unordered Section -->
+        <a href="./components/unordered_list.html" class="btn btn-unordered">Unordered List</a>
 
-        <!-- Optgroup Select Section -->
-        <a href="./components/optgroup_select.html" rel="noopener noreferrer" class="btn btn-optgroup">Optgroup Select</a>
+        <!-- Ordered Section -->
+        <a href="./components/ordered_list.html" class="btn btn-ordered">Ordered List</a>
 
-        <!-- Searchable Select Section -->
-        <a href="./components/searchable_select.html" rel="noopener noreferrer" class="btn btn-searchable">Searchable Select</a>
+        <!-- Nested Section -->
+        <a href="./components/nested_list.html" class="btn btn-nested">Nested List</a>
     </div>
 
 </body>
