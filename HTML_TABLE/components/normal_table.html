@@ -59,5 +59,380 @@
         console.groupEnd();
     </script>
 
+    <hr>
+
+    <h2>Simple Invoice (with Caption)</h2>
+
+    <table border="1">
+        <caption>Invoice #INV-2024-001</caption>
+        <tr>
+            <th>Item #</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Unit Price ($)</th>
+            <th>Total ($)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A4 Notebook</td>
+            <td>5</td>
+            <td>2.50</td>
+            <td>12.50</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Ballpoint Pen (Blue)</td>
+            <td>10</td>
+            <td>1.00</td>
+            <td>10.00</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Geometry Box</td>
+            <td>1</td>
+            <td>8.75</td>
+            <td>8.75</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🧾 Invoice Table (caption)");
+        console.log(`
+            \x3Ctable border="1">
+                \x3Ccaption>Invoice #INV-2024-001\x3C/caption>
+                \x3Ctr>
+                    \x3Cth>Item #\x3C/th>
+                    \x3Cth>Description\x3C/th>
+                    \x3Cth>Qty\x3C/th>
+                    \x3Cth>Unit Price ($)\x3C/th>
+                    \x3Cth>Total ($)\x3C/th>
+                \x3C/tr>
+                \x3Ctr>
+                    \x3Ctd>1\x3C/td>
+                    \x3Ctd>A4 Notebook\x3C/td>
+                    \x3Ctd>5\x3C/td>
+                    \x3Ctd>2.50\x3C/td>
+                    \x3Ctd>12.50\x3C/td>
+                \x3C/tr>
+            \x3C/table>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Employee Directory (Alignment Practice)</h2>
+
+    <table border="1" width="600">
+        <tr>
+            <th align="left">ID</th>
+            <th align="left">Name</th>
+            <th align="center">Department</th>
+            <th align="right">Salary ($)</th>
+        </tr>
+        <tr>
+            <td align="left">E001</td>
+            <td align="left">Alice Wong</td>
+            <td align="center">Engineering</td>
+            <td align="right">5,200</td>
+        </tr>
+        <tr>
+            <td align="left">E002</td>
+            <td align="left">Rahul Verma</td>
+            <td align="center">Marketing</td>
+            <td align="right">4,100</td>
+        </tr>
+        <tr>
+            <td align="left">E003</td>
+            <td align="left">Sara Khan</td>
+            <td align="center">Finance</td>
+            <td align="right">4,800</td>
+        </tr>
+        <tr>
+            <td align="left">E004</td>
+            <td align="left">Tom Becker</td>
+            <td align="center">Engineering</td>
+            <td align="right">5,500</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("📐 Table Alignment (align attribute)");
+        console.log(`
+            \x3Ctable border="1" width="600">
+                \x3Ctr>
+                    \x3Cth align="left">ID\x3C/th>
+                    \x3Cth align="left">Name\x3C/th>
+                    \x3Cth align="center">Department\x3C/th>
+                    \x3Cth align="right">Salary ($)\x3C/th>
+                \x3C/tr>
+                \x3Ctr>
+                    \x3Ctd align="left">E001\x3C/td>
+                    \x3Ctd align="left">Alice Wong\x3C/td>
+                    \x3Ctd align="center">Engineering\x3C/td>
+                    \x3Ctd align="right">5,200\x3C/td>
+                \x3C/tr>
+            \x3C/table>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Book Library (Table with Links &amp; Images)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Read More</th>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://m.media-amazon.com/images/I/71HwJUpjdeL._UF894,1000_QL80_.jpg"
+                    alt="Book cover" width="60" height="80">
+            </td>
+            <td>Introduction to HTML</td>
+            <td>Jane Smith</td>
+            <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">MDN Docs</a></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ4xSKJTtbwep4DoJiB50RvVc41ZQtiDEXOPEkgcr6LLvjt3hhWc4XkgLs&s=10"
+                    alt="Book cover" width="60" height="80">
+            </td>
+            <td>HTML &amp; CSS Design</td>
+            <td>Jon Duckett</td>
+            <td><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">W3Schools</a></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://images.routledge.com/common/jackets/crclarge/978042914/9780429143472.jpg"
+                    alt="Book cover" width="60" height="80">
+            </td>
+            <td>Semantic Web Handbook</td>
+            <td>Grigoris Antoniou</td>
+            <td><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener">HTML Spec</a></td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🔗 Table with Links & Images");
+        console.log(`
+            \x3Ctable border="1">
+                \x3Ctr>
+                    \x3Cth>Cover\x3C/th>
+                    \x3Cth>Title\x3C/th>
+                    \x3Cth>Author\x3C/th>
+                    \x3Cth>Read More\x3C/th>
+                \x3C/tr>
+                \x3Ctr>
+                    \x3Ctd>\x3Cimg src="cover.jpg" alt="Book cover" width="60" height="80">\x3C/td>
+                    \x3Ctd>Introduction to HTML\x3C/td>
+                    \x3Ctd>Jane Smith\x3C/td>
+                    \x3Ctd>\x3Ca href="https://developer.mozilla.org" target="_blank">MDN Docs\x3C/a>\x3C/td>
+                \x3C/tr>
+            \x3C/table>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Class Timetable (colgroup &amp; col Practice)</h2>
+
+    <table border="1">
+        <caption>Grade 9 – Section A</caption>
+        <colgroup>
+            <col style="background-color: #f0f0f0;">
+            <col span="5">
+        </colgroup>
+        <tr>
+            <th>Period</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+        </tr>
+        <tr>
+            <td>1st</td>
+            <td>Math</td>
+            <td>English</td>
+            <td>Science</td>
+            <td>Nepali</td>
+            <td>Computer</td>
+        </tr>
+        <tr>
+            <td>2nd</td>
+            <td>Science</td>
+            <td>Math</td>
+            <td>English</td>
+            <td>Computer</td>
+            <td>Nepali</td>
+        </tr>
+        <tr>
+            <td>3rd</td>
+            <td>English</td>
+            <td>Computer</td>
+            <td>Math</td>
+            <td>Science</td>
+            <td>Math</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🎨 colgroup & col Example");
+        console.log(`
+            \x3Ccolgroup>
+                \x3Ccol style="background-color: #f0f0f0;">
+                \x3Ccol span="5">
+            \x3C/colgroup>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Quarterly Sales (thead / tbody / tfoot)</h2>
+
+    <table border="1">
+        <caption>Sales Report – Year 2024</caption>
+        <thead>
+            <tr>
+                <th>Region</th>
+                <th>Q1 ($)</th>
+                <th>Q2 ($)</th>
+                <th>Q3 ($)</th>
+                <th>Q4 ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>North</td>
+                <td>12,000</td>
+                <td>14,500</td>
+                <td>13,200</td>
+                <td>15,800</td>
+            </tr>
+            <tr>
+                <td>South</td>
+                <td>9,800</td>
+                <td>11,200</td>
+                <td>10,500</td>
+                <td>12,900</td>
+            </tr>
+            <tr>
+                <td>East</td>
+                <td>7,500</td>
+                <td>8,900</td>
+                <td>9,300</td>
+                <td>10,100</td>
+            </tr>
+            <tr>
+                <td>West</td>
+                <td>11,300</td>
+                <td>12,700</td>
+                <td>13,800</td>
+                <td>14,200</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>40,600</strong></td>
+                <td><strong>47,300</strong></td>
+                <td><strong>46,800</strong></td>
+                <td><strong>53,000</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        console.group("🗂️ thead / tbody / tfoot Example");
+        console.log(`
+            \x3Cthead>
+                \x3Ctr>\x3Cth>Region\x3C/th>\x3Cth>Q1\x3C/th>...\x3C/tr>
+            \x3C/thead>
+            \x3Ctbody>
+                \x3Ctr>\x3Ctd>North\x3C/td>\x3Ctd>12000\x3C/td>...\x3C/tr>
+            \x3C/tbody>
+            \x3Ctfoot>
+                \x3Ctr>\x3Ctd>Total\x3C/td>\x3Ctd>40600\x3C/td>...\x3C/tr>
+            \x3C/tfoot>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Student Registration Form (inside a Table)</h2>
+
+    <form action="#" method="get">
+        <table border="1" cellpadding="8">
+            <tr>
+                <td><label for="fname">Full Name:</label></td>
+                <td><input type="text" id="fname" name="fname" placeholder="John Doe"></td>
+            </tr>
+            <tr>
+                <td><label for="femail">Email:</label></td>
+                <td><input type="email" id="femail" name="femail" placeholder="john@example.com"></td>
+            </tr>
+            <tr>
+                <td><label for="fclass">Class:</label></td>
+                <td>
+                    <select id="fclass" name="fclass">
+                        <option value="9">Class 9</option>
+                        <option value="10">Class 10</option>
+                        <option value="11">Class 11</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobbies:</td>
+                <td>
+                    <label><input type="checkbox" name="hobby" value="reading"> Reading</label>
+                    <label><input type="checkbox" name="hobby" value="coding"> Coding</label>
+                    <label><input type="checkbox" name="hobby" value="sports"> Sports</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        console.group("📋 Form inside a Table");
+        console.log(`
+            \x3Cform action="#" method="get">
+                \x3Ctable border="1" cellpadding="8">
+                    \x3Ctr>
+                        \x3Ctd>\x3Clabel for="fname">Full Name:\x3C/label>\x3C/td>
+                        \x3Ctd>\x3Cinput type="text" id="fname" name="fname">\x3C/td>
+                    \x3C/tr>
+                    \x3Ctr>
+                        \x3Ctd colspan="2" align="center">
+                            \x3Cinput type="submit" value="Register">
+                            \x3Cinput type="reset" value="Clear">
+                        \x3C/td>
+                    \x3C/tr>
+                \x3C/table>
+            \x3C/form>
+        `);
+        console.groupEnd();
+    </script>
+
 </body>
 </html>

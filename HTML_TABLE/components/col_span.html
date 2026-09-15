@@ -46,5 +46,160 @@
         console.groupEnd();
     </script>
 
+    <hr>
+
+    <h2>Quarterly Sales Summary (colspan Practice)</h2>
+
+    <table border="1">
+        <tr>
+            <th colspan="4">Sales Report – 2024</th>
+        </tr>
+        <tr>
+            <th>Region</th>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+        </tr>
+        <tr>
+            <td>North</td>
+            <td>12,000</td>
+            <td>14,500</td>
+            <td>13,200</td>
+        </tr>
+        <tr>
+            <td>South</td>
+            <td>9,800</td>
+            <td>11,200</td>
+            <td>10,500</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>71,200</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("📈 Quarterly Sales (colspan for title + totals)");
+        console.log(`
+            \x3Ctr>
+                \x3Cth colspan="4">Sales Report – 2024\x3C/th>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Ctd colspan="3">Total\x3C/td>
+                \x3Ctd>71,200\x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Event Schedule (colspan Practice)</h2>
+
+    <table border="1">
+        <tr>
+            <th colspan="2">Morning Session</th>
+            <th colspan="2">Afternoon Session</th>
+        </tr>
+        <tr>
+            <th>Time</th>
+            <th>Topic</th>
+            <th>Time</th>
+            <th>Topic</th>
+        </tr>
+        <tr>
+            <td>09:00</td>
+            <td>Registration</td>
+            <td>02:00</td>
+            <td>Workshop A</td>
+        </tr>
+        <tr>
+            <td>10:00</td>
+            <td>Keynote</td>
+            <td>04:00</td>
+            <td>Panel Discussion</td>
+        </tr>
+        <tr>
+            <td colspan="4">Closing Ceremony – 05:00 PM</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("📅 Event Schedule (multi-level colspan)");
+        console.log(`
+            \x3Ctr>
+                \x3Cth colspan="2">Morning Session\x3C/th>
+                \x3Cth colspan="2">Afternoon Session\x3C/th>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Ctd colspan="4">Closing Ceremony – 05:00 PM\x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Invoice with Colspan Totals (colspan Practice)</h2>
+
+    <table border="1">
+        <caption>Invoice #INV-2024-001</caption>
+        <tr>
+            <th>Item #</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Unit Price ($)</th>
+            <th>Total ($)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A4 Notebook</td>
+            <td>5</td>
+            <td>2.50</td>
+            <td>12.50</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Ballpoint Pen (Blue)</td>
+            <td>10</td>
+            <td>1.00</td>
+            <td>10.00</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Geometry Box</td>
+            <td>1</td>
+            <td>8.75</td>
+            <td>8.75</td>
+        </tr>
+        <tr>
+            <td colspan="4"><strong>Subtotal</strong></td>
+            <td>31.25</td>
+        </tr>
+        <tr>
+            <td colspan="4"><strong>Tax (13%)</strong></td>
+            <td>4.06</td>
+        </tr>
+        <tr>
+            <td colspan="4"><strong>Grand Total</strong></td>
+            <td><strong>35.31</strong></td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🧾 Invoice (colspan for summary rows)");
+        console.log(`
+            \x3Ctr>
+                \x3Ctd colspan="4">Subtotal\x3C/td>
+                \x3Ctd>31.25\x3C/td>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Ctd colspan="4">Grand Total\x3C/td>
+                \x3Ctd>35.31\x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
 </body>
 </html>

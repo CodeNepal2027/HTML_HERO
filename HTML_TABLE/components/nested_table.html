@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h2>Exam Results & Internal Nested Marks (rowspan + colspan)</h2>
+    <h2>Exam Results &amp; Internal Nested Marks (rowspan + colspan)</h2>
 
     <table border="1">
         <tr>
@@ -29,7 +29,6 @@
         </tr>
         <tr>
             <td>Michael Chang</td>
-            <!-- Nested Table inside a single td -->
             <td colspan="2">
                 <table border="1">
                     <tr>
@@ -52,6 +51,229 @@
             \x3Ctr>
                 \x3Cth rowspan="2">Student Name\x3C/th>
                 \x3Cth colspan="2">Marks Breakdown\x3C/th>
+                \x3Cth rowspan="2">Final Grade\x3C/th>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Cth>Theory\x3C/th>
+                \x3Cth>Practical\x3C/th>
+            \x3C/tr>
+            \x3Ctr>
+                \x3Ctd>Michael Chang\x3C/td>
+                \x3Ctd colspan="2">
+                    \x3Ctable border="1">
+                        \x3Ctr>\x3Cth>Mid-Term\x3C/th>\x3Cth>Final-Term\x3C/th>\x3C/tr>
+                        \x3Ctr>\x3Ctd>42\x3C/td>\x3Ctd>45\x3C/td>\x3C/tr>
+                    \x3C/table>
+                \x3C/td>
+                \x3Ctd>A\x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Department → Employee → Projects (Nested Table)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Department</th>
+            <th>Employees</th>
+        </tr>
+        <tr>
+            <td><strong>Engineering</strong></td>
+            <td>
+                <table border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                    </tr>
+                    <tr>
+                        <td>Alice</td>
+                        <td>Backend</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td>Frontend</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Marketing</strong></td>
+            <td>
+                <table border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                    </tr>
+                    <tr>
+                        <td>Carol</td>
+                        <td>SEO</td>
+                    </tr>
+                    <tr>
+                        <td>Dave</td>
+                        <td>Content</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🏢 Department → Employees (Nested Table)");
+        console.log(`
+            \x3Ctr>
+                \x3Ctd>Engineering\x3C/td>
+                \x3Ctd>
+                    \x3Ctable border="1">
+                        \x3Ctr>\x3Cth>Name\x3C/th>\x3Cth>Role\x3C/th>\x3C/tr>
+                        \x3Ctr>\x3Ctd>Alice\x3C/td>\x3Ctd>Backend\x3C/td>\x3C/tr>
+                        \x3Ctr>\x3Ctd>Bob\x3C/td>\x3Ctd>Frontend\x3C/td>\x3C/tr>
+                    \x3C/table>
+                \x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>School → Classes → Students (Nested Table)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Class</th>
+            <th>Students</th>
+        </tr>
+        <tr>
+            <td><strong>Class 9</strong></td>
+            <td>
+                <table border="1">
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                    </tr>
+                    <tr>
+                        <td>101</td>
+                        <td>Alex</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Priya</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Class 10</strong></td>
+            <td>
+                <table border="1">
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                    </tr>
+                    <tr>
+                        <td>201</td>
+                        <td>David</td>
+                    </tr>
+                    <tr>
+                        <td>202</td>
+                        <td>Sarah</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🏫 School → Classes (Nested Table)");
+        console.log(`
+            \x3Ctr>
+                \x3Ctd>Class 9\x3C/td>
+                \x3Ctd>
+                    \x3Ctable border="1">
+                        \x3Ctr>\x3Cth>Roll No\x3C/th>\x3Cth>Name\x3C/th>\x3C/tr>
+                        \x3Ctr>\x3Ctd>101\x3C/td>\x3Ctd>Alex\x3C/td>\x3C/tr>
+                        \x3Ctr>\x3Ctd>102\x3C/td>\x3Ctd>Priya\x3C/td>\x3C/tr>
+                    \x3C/table>
+                \x3C/td>
+            \x3C/tr>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Order → Order Items (Nested Table)</h2>
+
+    <table border="1">
+        <tr>
+            <th>Order ID</th>
+            <th>Items</th>
+            <th>Total ($)</th>
+        </tr>
+        <tr>
+            <td>ORD-001</td>
+            <td>
+                <table border="1">
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Notebook</td>
+                        <td>2</td>
+                        <td>5.00</td>
+                    </tr>
+                    <tr>
+                        <td>Pen</td>
+                        <td>4</td>
+                        <td>4.00</td>
+                    </tr>
+                </table>
+            </td>
+            <td>9.00</td>
+        </tr>
+        <tr>
+            <td>ORD-002</td>
+            <td>
+                <table border="1">
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Eraser</td>
+                        <td>3</td>
+                        <td>1.50</td>
+                    </tr>
+                    <tr>
+                        <td>Ruler</td>
+                        <td>1</td>
+                        <td>2.50</td>
+                    </tr>
+                </table>
+            </td>
+            <td>4.00</td>
+        </tr>
+    </table>
+
+    <script>
+        console.group("🛒 Order → Items (Nested Table)");
+        console.log(`
+            \x3Ctr>
+                \x3Ctd>ORD-001\x3C/td>
+                \x3Ctd>
+                    \x3Ctable border="1">
+                        \x3Ctr>\x3Cth>Item\x3C/th>\x3Cth>Qty\x3C/th>\x3Cth>Price\x3C/th>\x3C/tr>
+                        \x3Ctr>\x3Ctd>Notebook\x3C/td>\x3Ctd>2\x3C/td>\x3Ctd>5.00\x3C/td>\x3C/tr>
+                        \x3Ctr>\x3Ctd>Pen\x3C/td>\x3Ctd>4\x3C/td>\x3Ctd>4.00\x3C/td>\x3C/tr>
+                    \x3C/table>
+                \x3C/td>
+                \x3Ctd>9.00\x3C/td>
             \x3C/tr>
         `);
         console.groupEnd();
