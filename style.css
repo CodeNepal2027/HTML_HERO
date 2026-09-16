@@ -242,9 +242,10 @@ body::-webkit-scrollbar {
     border-radius: 12px;
     background-color: #f3f3f3;
     box-shadow: var(--shadow-md);
-    overflow: hidden;
+    overflow-x: scroll;
     transition: height 0.2s ease;
 }
+
 
 /* ==========================================================================
     Responsive Cards Grid
