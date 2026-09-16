@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- OPTECH Favicon --> 
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <title> HTML HERO || Paragraphs & Blocks</title>
+</head>
+<body>
+
+    <h2>Paragraphs &amp; Block-Level Text</h2>
+
+    <h3>1. Basic Paragraphs</h3>
+    <p>This is the first paragraph. It groups sentences together.</p>
+    <p>This is a second paragraph. Browsers add spacing between paragraphs automatically.</p>
+
+    <script>
+        console.group("📄 1. Basic Paragraphs (&lt;p&gt;)");
+        console.log(`
+            \x3Cp>This is the first paragraph. It groups sentences together.\x3C/p>
+            \x3Cp>This is a second paragraph. Browsers add spacing between paragraphs automatically.\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>2. Line Break (&lt;br&gt;)</h3>
+    <p>
+        Line one.<br>
+        Line two.<br>
+        Line three.
+    </p>
+
+    <script>
+        console.group("📄 2. Line Break (&lt;br&gt;)");
+        console.log(`
+            \x3Cp>
+                Line one.\x3Cbr>
+                Line two.\x3Cbr>
+                Line three.
+            \x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>3. Horizontal Rule (&lt;hr&gt;)</h3>
+    <p>Text above the rule.</p>
+    <hr>
+    <p>Text below the rule.</p>
+
+    <script>
+        console.group("📄 3. Horizontal Rule (&lt;hr&gt;)");
+        console.log(`
+            \x3Cp>Text above the rule.\x3C/p>
+            \x3Chr>
+            \x3Cp>Text below the rule.\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>4. Blockquote</h3>
+    <blockquote>
+        "The best way to learn HTML is to write HTML."
+    </blockquote>
+
+    <script>
+        console.group("📄 4. Blockquote (&lt;blockquote&gt;)");
+        console.log(`
+            \x3Cblockquote>
+                "The best way to learn HTML is to write HTML."
+            \x3C/blockquote>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>5. Short Inline Quote (&lt;q&gt;)</h3>
+    <p>My teacher always said, <q>Practice every tag at least once.</q></p>
+
+    <script>
+        console.group("📄 5. Short Inline Quote (&lt;q&gt;)");
+        console.log(`
+            \x3Cp>My teacher always said, \x3Cq>Practice every tag at least once.\x3C/q>\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>6. Preformatted Text (&lt;pre&gt;)</h3>
+    <pre>
+        Line 1   with   spaces
+        Line 2
+            Indented line
+    </pre>
+
+    <script>
+        console.group("📄 6. Preformatted Text (&lt;pre&gt;)");
+        console.log(`
+            \x3Cpre>
+                Line 1   with   spaces
+                Line 2
+                    Indented line
+            \x3C/pre>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

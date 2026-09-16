@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- OPTECH Favicon --> 
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <title> HTML HERO || Code & Technical Text</title>
+</head>
+<body>
+
+    <h2>Code &amp; Technical Text Tags</h2>
+
+    <h3>1. Inline Code (&lt;code&gt;)</h3>
+    <p>Use the <code>&lt;p&gt;</code> tag to create a paragraph.</p>
+    <p>In JavaScript: <code>console.log("Hello");</code></p>
+
+    <script>
+        console.group("💻 1. Inline Code (&lt;code&gt;)");
+        console.log(`
+            \x3Cp>Use the \x3Ccode>&lt;p&gt;\x3C/code> tag to create a paragraph.\x3C/p>
+            \x3Cp>In JavaScript: \x3Ccode>console.log("Hello");\x3C/code>\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>2. Keyboard Input (&lt;kbd&gt;)</h3>
+    <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.</p>
+    <p>Press <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste.</p>
+    <p>Save with <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
+
+    <script>
+        console.group("⌨️ 2. Keyboard Input (&lt;kbd&gt;)");
+        console.log(`
+            \x3Cp>Press \x3Ckbd>Ctrl\x3C/kbd> + \x3Ckbd>C\x3C/kbd> to copy.\x3C/p>
+            \x3Cp>Press \x3Ckbd>Ctrl\x3C/kbd> + \x3Ckbd>V\x3C/kbd> to paste.\x3C/p>
+            \x3Cp>Save with \x3Ckbd>Ctrl\x3C/kbd> + \x3Ckbd>S\x3C/kbd>.\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>3. Sample Output (&lt;samp&gt;)</h3>
+    <p>Program output: <samp>Build successful. 0 errors.</samp></p>
+
+    <script>
+        console.group("🖥️ 3. Sample Output (&lt;samp&gt;)");
+        console.log(`
+            \x3Cp>Program output: \x3Csamp>Build successful. 0 errors.\x3C/samp>\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>4. Variable (&lt;var&gt;)</h3>
+    <p>Area of a circle: <var>π</var> × <var>r</var><sup>2</sup></p>
+    <p>Simple interest: <var>P</var> × <var>R</var> × <var>T</var> / 100</p>
+
+    <script>
+        console.group("📐 4. Variable (&lt;var&gt;)");
+        console.log(`
+            \x3Cp>Area of a circle: \x3Cvar>π\x3C/var> × \x3Cvar>r\x3C/var>\x3Csup>2\x3C/sup>\x3C/p>
+            \x3Cp>Simple interest: \x3Cvar>P\x3C/var> × \x3Cvar>R\x3C/var> × \x3Cvar>T\x3C/var> / 100\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>5. Preformatted Code Block</h3>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <script>
+        console.group("📄 5. Preformatted Code Block (&lt;pre&gt; + &lt;code&gt;)");
+        console.log(`
+            \x3Cpre>\x3Ccode>&lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;My Page&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Hello World&lt;/h1&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;\x3C/code>\x3C/pre>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>6. Combined Example (kbd + samp + code)</h3>
+    <p>Type <kbd>git status</kbd> and you'll see:</p>
+    <pre><samp>On branch main
+nothing to commit, working tree clean</samp></pre>
+
+    <script>
+        console.group("🧩 6. Combined Example (kbd + samp + code)");
+        console.log(`
+            \x3Cp>Type \x3Ckbd>git status\x3C/kbd> and you'll see:\x3C/p>
+            \x3Cpre>\x3Csamp>On branch main
+            nothing to commit, working tree clean\x3C/samp>\x3C/pre>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

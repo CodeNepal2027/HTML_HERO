@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- OPTECH Favicon --> 
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title> HTML HERO || HTML Text Practice</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 20px 48px 20px;
+        }
+        h1 { color: #0f172a; margin-bottom: 25px; font-size: 1.6rem; text-align: center; }
+        .button-container { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 340px; }
+        .btn {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px 24px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15); filter: brightness(1.08); }
+        .btn:active { transform: translateY(0); }
+
+        .btn-headings   { background-color: #3b82f6; }  /* Blue */
+        .btn-paragraphs { background-color: #10b981; }  /* Green */
+        .btn-formatting { background-color: #f59e0b; }  /* Amber */
+        .btn-code       { background-color: #8b5cf6; }  /* Purple */
+    </style>
+</head>
+<body>
+
+    <h1>HTML Text Practice Modules</h1>
+
+    <div class="button-container">
+        <a href="./components/heading.html"   class="btn btn-headings">Headings (h1 – h6)</a>
+        <a href="./components/paragraph.html" class="btn btn-paragraphs">Paragraphs &amp; Blocks</a>
+        <a href="./components/formatting.html" class="btn btn-formatting">Text Formatting</a>
+        <a href="./components/code_tech.html"  class="btn btn-code">Code &amp; Technical</a>
+    </div>
+
+</body>
+</html>
