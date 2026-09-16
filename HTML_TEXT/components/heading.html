@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- OPTECH Favicon --> 
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <title> HTML HERO || Headings</title>
+</head>
+<body>
+
+    <h2>Heading Tags (h1 – h6)</h2>
+
+    <h1>Heading 1 — Page Title</h1>
+    <h2>Heading 2 — Main Section</h2>
+    <h3>Heading 3 — Sub Section</h3>
+    <h4>Heading 4 — Smaller Sub Section</h4>
+    <h5>Heading 5 — Minor Heading</h5>
+    <h6>Heading 6 — Smallest Heading</h6>
+
+    <script>
+        console.group("📰 1. All Heading Tags (h1 – h6)");
+        console.log(`
+            \x3Ch1>Heading 1 — Page Title\x3C/h1>
+            \x3Ch2>Heading 2 — Main Section\x3C/h2>
+            \x3Ch3>Heading 3 — Sub Section\x3C/h3>
+            \x3Ch4>Heading 4 — Smaller Sub Section\x3C/h4>
+            \x3Ch5>Heading 5 — Minor Heading\x3C/h5>
+            \x3Ch6>Heading 6 — Smallest Heading\x3C/h6>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h2>Heading Structure Example</h2>
+
+    <h1>My School Report</h1>
+        <h2>1. Introduction</h2>
+        <h2>2. Subjects</h2>
+            <h3>2.1 Mathematics</h3>
+            <h3>2.2 Science</h3>
+                <h4>2.2.1 Physics</h4>
+                <h4>2.2.2 Chemistry</h4>
+        <h2>3. Conclusion</h2>
+
+    <script>
+        console.group("📰 2. Heading Structure Example (nested outline)");
+        console.log(`
+            \x3Ch1>My School Report\x3C/h1>
+                \x3Ch2>1. Introduction\x3C/h2>
+                \x3Ch2>2. Subjects\x3C/h2>
+                    \x3Ch3>2.1 Mathematics\x3C/h3>
+                    \x3Ch3>2.2 Science\x3C/h3>
+                        \x3Ch4>2.2.1 Physics\x3C/h4>
+                        \x3Ch4>2.2.2 Chemistry\x3C/h4>
+                \x3Ch2>3. Conclusion\x3C/h2>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>

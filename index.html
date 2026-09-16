@@ -124,6 +124,20 @@
                     type: <i>[ radio, input, select, datalist, ... etc ]</i>
                 </p>
             </a>
+
+            <!-- Project 6 = [ HTML_TEXT ] -->
+            <a href="./HTML_TEXT/text.html" class="project-card">
+                <div class="card-header">
+                    <span class="card-number"><i class="bi bi-hash"></i> 06</span>
+                    <i class="bi bi-fonts card-icon"></i>
+                </div>
+                <h2>HTML Text</h2>
+                <p>
+                    Typography &amp; text formatting practice.
+                    <br>
+                    tags: <i>[ h1–h6, p, b, i, u, s, sub, sup, mark, code, ... ]</i>
+                </p>
+            </a>
         </section>
     </main>
 
@@ -132,32 +146,6 @@
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-    
-    <script>
-        console.log(`
-            \x3C!-- iframe CODE USAGE EXAMPLE -->
-            
-            \x3Cbody>
-                \x3C!-- Contact Section -->
-                \x3Ciframe 
-                    src="./components/Contact.html" 
-                    title="Contact section" 
-                    frameborder="0" 
-                    width="100%" 
-                    scrolling="no" 
-                    onload="adjustFrame(this)"
-                >
-                \x3C/iframe>
-                \x3Chr>
-
-                \x3Cscript>
-                    function adjustFrame(iframe) {
-                        iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
-                    }
-                \x3C/script>
-            \x3C/body>
-        `);
-    </script>
 
     <!-- SPA Logic: iframe-aware back navigation + stable auto-height -->
     <script>
@@ -179,6 +167,8 @@
         }
 
         function loadProject(url) {
+            console.clear();   // show only the new page's logs
+
             iframeEntryUrl = url;
             stopHeightTracking();
 
@@ -313,6 +303,8 @@
         }
 
         function loadGrid() {
+            console.clear();   // clear when returning to home
+
             stopHeightTracking();
             iframeEntryUrl = null;
             mainContainer.className = "";

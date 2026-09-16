@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- OPTECH Favicon --> 
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <title> HTML HERO || Text Formatting</title>
+</head>
+<body>
+
+    <h2>Inline Text Formatting Tags</h2>
+
+    <h3>1. Bold vs Strong</h3>
+    <p>Normal text. <b>Bold text (b)</b>. <strong>Strong text (strong)</strong>.</p>
+
+    <script>
+        console.group("✍️ 1. Bold vs Strong");
+        console.log(`
+            \x3Cp>Normal text. \x3Cb>Bold text (b)\x3C/b>. \x3Cstrong>Strong text (strong)\x3C/strong>.\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>2. Italic vs Emphasis</h3>
+    <p>Normal text. <i>Italic text (i)</i>. <em>Emphasised text (em)</em>.</p>
+
+    <script>
+        console.group("✍️ 2. Italic vs Emphasis");
+        console.log(`
+            \x3Cp>Normal text. \x3Ci>Italic text (i)\x3C/i>. \x3Cem>Emphasised text (em)\x3C/em>.\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>3. Underline &amp; Strike</h3>
+    <p><u>Underlined text (u)</u></p>
+    <p><s>Struck-through text (s)</s></p>
+
+    <script>
+        console.group("✍️ 3. Underline & Strike");
+        console.log(`
+            \x3Cp>\x3Cu>Underlined text (u)\x3C/u>\x3C/p>
+            \x3Cp>\x3Cs>Struck-through text (s)\x3C/s>\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>4. Inserted &amp; Deleted</h3>
+    <p>Price: <del>$50</del> <ins>$35</ins></p>
+
+    <script>
+        console.group("✍️ 4. Inserted & Deleted");
+        console.log(`
+            \x3Cp>Price: \x3Cdel>$50\x3C/del> \x3Cins>$35\x3C/ins>\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>5. Highlighted Text</h3>
+    <p>This is <mark>highlighted text</mark> inside a paragraph.</p>
+
+    <script>
+        console.group("✍️ 5. Highlighted Text");
+        console.log(`
+            \x3Cp>This is \x3Cmark>highlighted text\x3C/mark> inside a paragraph.\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>6. Small Text</h3>
+    <p>Normal size. <small>Small print / fine print.</small></p>
+
+    <script>
+        console.group("✍️ 6. Small Text");
+        console.log(`
+            \x3Cp>Normal size. \x3Csmall>Small print / fine print.\x3C/small>\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>7. Subscript &amp; Superscript</h3>
+    <p>Water formula: H<sub>2</sub>O</p>
+    <p>Area of square: A = s<sup>2</sup></p>
+    <p>Einstein: E = mc<sup>2</sup></p>
+    <p>Ordinals: 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup></p>
+
+    <script>
+        console.group("✍️ 7. Subscript & Superscript");
+        console.log(`
+            \x3Cp>Water formula: H\x3Csub>2\x3C/sub>O\x3C/p>
+            \x3Cp>Area of square: A = s\x3Csup>2\x3C/sup>\x3C/p>
+            \x3Cp>Einstein: E = mc\x3Csup>2\x3C/sup>\x3C/p>
+            \x3Cp>Ordinals: 1\x3Csup>st\x3C/sup>, 2\x3Csup>nd\x3C/sup>, 3\x3Csup>rd\x3C/sup>\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+    <hr>
+
+    <h3>8. Abbreviation &amp; Citation</h3>
+    <p><abbr title="HyperText Markup Language">HTML</abbr> is fun to learn.</p>
+    <p>My favourite book is <cite>HTML for Beginners</cite>.</p>
+
+    <script>
+        console.group("✍️ 8. Abbreviation & Citation");
+        console.log(`
+            \x3Cp>\x3Cabbr title="HyperText Markup Language">HTML\x3C/abbr> is fun to learn.\x3C/p>
+            \x3Cp>My favourite book is \x3Ccite>HTML for Beginners\x3C/cite>.\x3C/p>
+        `);
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
