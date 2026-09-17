@@ -238,7 +238,7 @@ body::-webkit-scrollbar {
 .project-iframe {
     width: 100%;
     padding: 10px;
-    border: none;
+    border: 2px dashed gray;
     border-radius: 12px;
     background-color: #f3f3f3;
     box-shadow: var(--shadow-md);
